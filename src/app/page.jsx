@@ -1,8 +1,10 @@
+import HeroHome from "@/components/HeroHome";
 
 export default function Home() {
   return (
    <>
-        <p>hello world</p>
+        <HeroHome/>
+        
    </>
   );
 }

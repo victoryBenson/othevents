@@ -6,10 +6,10 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
+/* :root {
   --background: #171717;
   --foreground: #ffffff;
-}
+} */
 
 /* @media (prefers-color-scheme: dark) {
   :root {
@@ -21,7 +21,7 @@
 body {
   /* color: var(--foreground);
   background: var(--background); */
-  font-family: 'Mulish' sans-serif;
+  /* font-family: 'Mulish' sans-serif; */
 }
 
 

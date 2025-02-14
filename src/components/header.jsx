@@ -1,3 +1,6 @@
+'use client'
+
+import AnimatedLink from '@/shared/AnimatedLink'
 import Logo from '@/shared/logo'
 import Link from 'next/link'
 import React from 'react'
@@ -11,7 +14,8 @@ const Header = () => {
         <div className='flex justify-end w-full'>
             <ul className='flex items-center gap-8'>
                 <li>
-                    <Link href={'#'}>Services</Link>
+                    {/* <Link href={'#'}>Services</Link> */}
+                    <AnimatedLink href={'#'} text='Services' />
                 </li>
                 <li>
                     <Link href={'#'}>Rentals</Link>

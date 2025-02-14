@@ -14,6 +14,14 @@ export default {
         primary: '#F0743E',
       },
     },
+    backgroundImage: {
+      'homeBg': "url('/assets/img/About Us image.png')",
+    },
+    fontFamily: {
+      sans: ["Poppins", 'sans'],
+      serif: ["Mulish", 'serif'],
+      desyrel: ['Desyrel', 'cursive']
+    },
   },
   plugins: [],
 };
