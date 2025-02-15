@@ -12,15 +12,17 @@ export default {
         foreground: "var(--foreground)",
         darkgray: '#2C2C2C',
         primary: '#F0743E',
+        lightgray: "#f7f7f7",
       },
     },
     backgroundImage: {
-      'homeBg': "url('/assets/img/About Us image.png')",
+      'homeBg': "url('/assets/img/aboutUs.png')",
+      'ticketImg': "url('/assets/img/ticket-img.png')"
     },
     fontFamily: {
       sans: ["Poppins", 'sans'],
-      serif: ["Mulish", 'serif'],
-      desyrel: ['Desyrel', 'cursive']
+      // serif: ["Mulish", 'serif'],
+      // desyrel: ['Desyrel', 'cursive']
     },
   },
   plugins: [],

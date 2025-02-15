@@ -28,3 +28,13 @@ body {
 html {
   scroll-behavior: smooth;
 }
+
+.swiper-slide {
+  /* display: flex; */
+  /* justify-content: center; */
+  /* align-items: center; */
+  
+  /* border-radius: 8px; */
+  /* background: linear-gradient(135deg, #90cdf4, #63b3ed); /* Gradient backgrou */
+  /* color: white; */
+}
