@@ -29,11 +29,11 @@ const Header = () => {
                 </li>
                 <li>
                 {/* <Link href={'#'}>Conact Us</Link> */}
-                    <AnimatedLink href={'#'} text='Contact Us' />
+                    <AnimatedLink href={'contact-us'} text='Contact Us' />
                 </li>
                 <li>
                 {/* <Link href={'#'}>Wedding Fair '25</Link> */}
-                    <AnimatedLink href={'#'} text="Wedding Fair '25" />
+                    <AnimatedLink href={'wedding-page'} text="Wedding Fair '25" />
                 </li>
                 <li className=''>
                     <Link href={'#'} className='bg-primary text-white p-3 rounded'>Book a call</Link>

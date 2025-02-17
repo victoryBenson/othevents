@@ -141,7 +141,7 @@ const page = () => {
         </section>
 
         {/* next event */}
-        <section className=' py-40 h-full'>
+        <section className=' pt-40 h-full'>
             {/* <div className='flex h-full items-center'> */}
                 <div className='flex flex-col md:flex-row w-full h-full justify-between'>  
                     <div className='h-[70vh] w-full md:w-1/2 bg-primary/10 p-5 md:p-10 lg:p-20 flex flex-col justify-center space-y-5'>

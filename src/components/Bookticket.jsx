@@ -6,7 +6,6 @@ import { CiCalendar } from "react-icons/ci";
 const data = [
     {
         id: 1,
-        // icon: <CiCalendar />,
         name: 'The Wedding Fair 2025',
         image: '/assets/img/ticket-img.png',
         amount: '$150',

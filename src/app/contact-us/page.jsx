@@ -4,18 +4,15 @@ import rent1Img from '../../../public/assets/img/rent1.png'
 import rent2Img from '../../../public/assets/img/rent2.png'
 import rent3Img from '../../../public/assets/img/rent3.png'
 import { motion } from 'framer-motion';
-import { Button, ButtonLinkOrange } from '@/shared/ButtonLink'
+import { Button, ButtonLinkOrange, ButtonLinkWhite } from '@/shared/ButtonLink'
 import Image from 'next/image'
 import HeroComponent from '@/components/HeroComponent';
-import heroImg from '../../../public/assets/img/about-us.png'
+import heroImg from '../../../public/assets/img/services.png'
 import  planImg from '../../../public/assets/img/about-2.png'
-import aboutImg from '../../../public/assets/img/aboutUs.png'
-import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 import "swiper/css/autoplay";
 import "swiper/css/pagination";
-import { Autoplay, Pagination } from "swiper/modules";
-import { TfiQuoteRight, TfiQuoteLeft } from "react-icons/tfi";
+
 
 
 export const rentalData = [
@@ -81,67 +78,42 @@ const page = () => {
   return (
     <>
         <section>
-            <HeroComponent title={'Creating Unforgettable Events with Passion & Precision'} image={heroImg}/>
+            <HeroComponent title={'Contact Us'} image={heroImg}/>
         </section>
-        <section className='px-5 md:px-10 lg:px-20 py-40' id='about'>
-            <div className='flex flex-col lg:flex-row justify-center items-center mx-auto gap-10'>
-                <div className='space-y-4 md:w-1/2'>
-                    <h1 className="text-2xl lg:text-4xl  font-bold mb-4 py-5">Who We Are </h1>
-                    <p className=' sm:text-lg lg:text-2xl leading-8 py-5 ld:text-start text-neutral'>
-                        At PartyWithOTH, we specialize in crafting unforgettable events, handling every detail so you can enjoy the moment. From weddings to corporate functions, our expert team ensures seamless planning and execution.
-                    </p>
+            
+        {/* contact us */}
+        <section className=' mt-10 lg:mt-40  h-full md:min-h-[90vh] overflow-hidden p-5 md:p-10 lg:p-20'>
+            <div className=' h-full flex flex-col lg:flex-row justify-center items-center mx-auto gap-20 '>
+                <div className='md:w-1/2 '>
+                    <p className='text-2xl lg:pb-16 md:text-4xl font-bold '>Get in Touch with PartyWithOTH</p>
+                    <p className='text-neutral text-lg'>We’d love to hear from you. Whether you have questions, need event planning assistance, or want to book rentals, we’re here to help</p>
                 </div>
-                <div className='md:w-1/2'>
-                    <div className='w-auto h-[60vh] rounded-lg'>
-                        <Image src={aboutImg} alt='about' className='h-full w-full object-cover rounded-lg'/>
-                    </div>
+
+                <div className='space-y-4 w-full md:w-1/2 '>
+                    <p className='text-white text-lg md:text-2xl'>Tell us what you have in mind</p>
+                    <form className='space-y-5'>
+                        <div>
+                            <label htmlFor=""></label>
+                            <input className='border border-primary p-3 w-full rounded' type="text" placeholder='Enter your name' />
+                        </div>
+                        <div>
+                            <label htmlFor=""></label>
+                            <input className='border border-primary p-3 w-full rounded' type="text" placeholder='Enter your email' />
+                        </div>
+                        <div>
+                            <label htmlFor=""></label>
+                            <textarea className='border border-primary p-3 w-full h-full rounded' rows={5} cols={5} name="" id="" placeholder='How do you want us to help you?'></textarea>
+                        </div>
+                        <div className='overflow-hidden rounded'>
+                            <motion.button whileHover={{ scale: 1.05 }} transition={{duration: 0.5}} className='text-white bg-primary text-center w-full p-3 rounded'>Send Message</motion.button>
+                        </div>
+                    </form>
                 </div>
-            </div>
-        </section>
-
-        <section className='px-5 md:px-10 lg:px-20 py-40'>
-            <div className="w-full">
-            <Swiper
-            spaceBetween={20} 
-            // slidesPerView={1} 
-            centeredSlides={true}
-            // breakpoints={{
-            //     640: { slidesPerView: 1.2 }, 
-            //     1024: { slidesPerView: 1.5 },
-            // }}
-            autoplay={{
-                delay: 3000,
-                disableOnInteraction: false,
-            }}
-            loop={true} 
-            pagination={{ clickable: true }} 
-            modules={[Autoplay, Pagination]}
-            className='mySwipper'
-
-
-            >
-                {
-                    slides.map((slide, index) => (
-                        <SwiperSlide key={index}>
-                            < div className="rounded-lg text-center justify-center items-center border border-gray-100/80 flex flex-col h-80 bg-[#FEF5EE]">
-                                
-                                <p className="text-2xl lg:text-4xl  font-bold mb-4 py-5">
-    
-                                        {slide.title}
-                                
-                                </p>
-                                <p className="pb-2 md:py-4 text-2xl flex px-20 text-neutral"><TfiQuoteLeft className='text-orange-300'/>{slide.description}<TfiQuoteRight className='text-orange-300'/></p>
-                            
-                            </div>
-                        </SwiperSlide>
-                    ))
-                }
-            </Swiper>
             </div>
         </section>
 
         {/* next event */}
-        <section className=' py-40 h-full'>
+        <section className=' pt-40 h-full'>
             {/* <div className='flex h-full items-center'> */}
                 <div className='flex flex-col md:flex-row w-full h-full justify-between'>  
                     <div className='h-[70vh] w-full md:w-1/2 bg-primary/10 p-5 md:p-10 lg:p-20 flex flex-col justify-center space-y-5'>
