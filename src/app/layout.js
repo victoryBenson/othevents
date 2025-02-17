@@ -1,6 +1,7 @@
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import Header from "@/components/header";
+import Footerview from "@/components/Footerview";
 
 
 export const metadata = {
@@ -12,10 +13,11 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <body
-        className={`bg-lightgray/40`}
+        className={`bg-lightgray/5 `}
       >
         <Header />
-        {children}
+          {children}
+        <Footerview/>
       </body>
     </html>
   );

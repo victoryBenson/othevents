@@ -67,11 +67,11 @@ const SplitScreenCarousel = () => {
                     <SwiperSlide key={index}>
                         <div className="rounded-lg text-center justify-between border border-gray-100/80 flex flex-col md:flex-row h-80">
                             <div className="text-start p-2 md:p-5 lg:p-10 space-y-5 w-full h-1/2 md:h-full md:w-1/2 order-last md:order-first bg-white">
-                                <p className="flex  md:text-lg font-semibold p-1">
+                                <p className="flex  md:text-xl font-semibold p-1 ">
                                     <span className="text-primary border-r border-r-primary p-1 md:p-3">
                                         {slide.id}
                                     </span>
-                                    <span className=" p-1 md:p-3">
+                                    <span className=" p-1 md:p-3 ">
                                         {slide.title}
                                     </span>
                                 </p>
@@ -86,7 +86,7 @@ const SplitScreenCarousel = () => {
                 ))
             }
         </Swiper>
-  </div>
+    </div>
   );
 };
 

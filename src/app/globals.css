@@ -38,3 +38,13 @@ html {
   /* background: linear-gradient(135deg, #90cdf4, #63b3ed); /* Gradient backgrou */
   /* color: white; */
 }
+
+.swiper-pagination-bullet {
+  background-color: #c4c4c4; /* Default bullet color */
+  opacity: 1; /* Ensure it's fully visible */
+}
+
+/* Change active bullet color */
+.swiper-pagination-bullet-active {
+  background-color: #7c1b77; /* Active bullet color */
+}

@@ -25,6 +25,7 @@ const HeroHome = () => {
 
   return (
     <Fragment>
+        {/* hero section */}
         <section
             className='relative h-[90vh] bg-homeBg bg-cover bg-no-repeat bg-center z-50'>
             
@@ -68,7 +69,7 @@ const HeroHome = () => {
 
         </section>
 
-
+        {/* about us */}
         <section className='px-5 md:px-10 lg:px-20 py-40 bg-lightgray' id='about'>
             <div className='flex flex-col lg:flex-row justify-center items-center mx-auto gap-10'>
                 <div className='space-y-4 md:w-1/2'>
@@ -94,7 +95,7 @@ const HeroHome = () => {
         {/* our expertise */}
         <section className='px-5 md:px-10 lg:px-20 py-40'>
             <h1 className="text-2xl lg:text-4xl  font-bold mb-4 py-5">
-            Our Expertise
+                Our Expertise
             </h1>
             <SplitScreenCarousel/>
         </section>
@@ -105,38 +106,38 @@ const HeroHome = () => {
         </section>
 
         {/* contact us */}
-        <section className='mt-40 h-[90vh] flex justify-center items-center bg-darkgray'>
-            <div className=' h-full flex flex-col lg:flex-row justify-center items-center mx-auto gap-20 px-20'>
-
-                <div className='md:w-1/2 py-10'>
-                    <p className='text-2xl p-5 px-7 text-white md:text-4xl font-bold text-center'>Will You love to reach out to us?</p>
-                    <div className='h-[50vh] overflow-hidden border'>
-                        {/* <Image src={contactImg} alt='serviceicon'/> */}
+        <section className=' mt-10 lg:mt-40  h-full md:min-h-[90vh] bg-darkgray overflow-hidden p-5 md:p-10 lg:p-20'>
+            <p className='text-2xl pb-6 lg:pb-16 text-white md:text-4xl font-bold '>Will You love to reach out to us?</p>
+            <div className=' h-full flex flex-col lg:flex-row justify-center items-center mx-auto gap-20 '>
+                <div className='md:w-1/2 '>
+                    <div className='min:h-[50vh] w-full overflow-hidden'>
+                        <Image src={contactImg} alt='contact' className='w-full h-full object-cover'/>
                     </div>
                 </div>
 
-                <div className='space-y-4 md:w-1/2'>
-                    <p>Tell us what you have in mind</p>
+                <div className='space-y-4  md:w-1/2 '>
+                    <p className='text-white text-lg md:text-2xl'>Tell us what you have in mind</p>
                     <form className='space-y-5'>
                         <div>
                             <label htmlFor=""></label>
-                            <input className='border border-primary p-3 w-full' type="text" placeholder='Enter your name' />
+                            <input className='border border-primary p-3 w-full rounded' type="text" placeholder='Enter your name' />
                         </div>
                         <div>
                             <label htmlFor=""></label>
-                            <input className='border border-primary p-3 w-full' type="text" placeholder='Enter your email' />
+                            <input className='border border-primary p-3 w-full rounded' type="text" placeholder='Enter your email' />
                         </div>
                         <div>
                             <label htmlFor=""></label>
-                            <textarea className='border border-primary p-3 w-full h-full' name="" id="" placeholder='How do you want us to help you?'></textarea>
+                            <textarea className='border border-primary p-3 w-full h-full rounded' rows={5} cols={5} name="" id="" placeholder='How do you want us to help you?'></textarea>
                         </div>
                         <div>
-                            <ButtonLinkOrange href={'#'} name={'Get Intouch'}/>
+                            <ButtonLinkWhite href={'#'} name={'Get Intouch'}/>
                         </div>
                     </form>
                 </div>
             </div>
         </section>
+
     </Fragment>
   )
 }

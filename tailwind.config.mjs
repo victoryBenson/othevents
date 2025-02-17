@@ -13,6 +13,7 @@ export default {
         darkgray: '#2C2C2C',
         primary: '#F0743E',
         lightgray: "#f7f7f7",
+        neutral: '#5D5D5D'
       },
     },
     backgroundImage: {
