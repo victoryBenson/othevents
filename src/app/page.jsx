@@ -2,7 +2,7 @@
 
 import HeroHomeCarousel from '@/shared/heroHomeCarousel';
 import React, {Fragment, useEffect, useState} from 'react'
-import { motion } from 'framer';
+import { motion, m } from 'framer';
 import { Link as ScrollTo } from "react-scroll";
 import { AiOutlineDown } from "react-icons/ai";
 import Image from 'next/image';
@@ -14,6 +14,7 @@ import { ButtonLinkOrange, ButtonLinkWhite } from '@/shared/ButtonLink';
 import SplitScreenCarousel from '@/components/OurExpertiseCarousel';
 import contactImg from '../../public/assets/img/contact.png'
 import Bookticket from '@/components/Bookticket';
+import { fadeIn, fadeInLeft } from '@/shared/Animations';
 
 export const fadeInVariants = {
   hidden: { opacity: 0, y: 50 },
@@ -83,14 +84,16 @@ const HeroHome = () => {
                 viewport={{ amount: 0.3 }} 
                 variants={fadeInVariants} 
                 className='flex flex-col lg:flex-row justify-center items-center mx-auto gap-10'>
-                <div className='space-y-4 md:w-1/2'>
+                <m.div 
+                    
+                    className='space-y-4 md:w-1/2'>
                     <p className='text-2xl md:text-4xl font-bold'>At PartyWithOTH</p>
                     <Image src={icon} alt='serviceicon'/>
                     <p className='text-lg py-5 text-justify ld:text-start'>we specialize in curating exceptional events and offering premium rentals. Whether you're planning a wedding, birthday, or corporate event, we handle the details so you can enjoy the moment.</p>
                     <ButtonLinkOrange href='#' name={'Learn more'}/>
-                </div>
+                </m.div>
                 <div className='md:w-1/2'>
-                    <div className='flex gap-4'>
+                    <m.div className='flex gap-4'>
                         <div className='flex flex-col gap-4'>
                             <Image src={frame1} alt='frame' className='h-full w-full'/>
                             <Image src={frame2} alt='frame' className='h-full w-full'/>
@@ -98,7 +101,7 @@ const HeroHome = () => {
                         <div className='h-full w-auto'>
                             <Image src={frame3} alt='frame' className='h-full w-full'/>
                         </div>
-                    </div>
+                    </m.div>
                 </div>
             </motion.div>
         </motion.section>
@@ -109,7 +112,7 @@ const HeroHome = () => {
             whileInView="visible"
             viewport={{ amount: 0.3 }} 
             variants={fadeInVariants} 
-            className='px-5 md:px-10 lg:px-20 py-40 bg-lightgray'
+            className='px-5 md:px-10 lg:px-20 py-10 md:py-40 bg-lightgray'
             >
             <h1 className="text-2xl lg:text-4xl  font-bold mb-4 py-5">
                 Our Expertise
@@ -144,9 +147,9 @@ const HeroHome = () => {
                     </div>
                 </div>
 
-                <div className='space-y-4  md:w-1/2 '>
+                <div className='space-y-4  md:w-1/2 w-full '>
                     <p className='text-white text-lg md:text-2xl'>Tell us what you have in mind</p>
-                    <form className='space-y-5'>
+                    <form className='space-y-5 mb-5'>
                         <div>
                             <label htmlFor=""></label>
                             <input className='border border-primary p-3 w-full rounded' type="text" placeholder='Enter your name' />

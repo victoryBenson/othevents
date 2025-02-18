@@ -33,7 +33,7 @@ const Bookticket = () => {
                                 <span className='flex items-center '><CiCalendar className='text-primary '/>{item.startDate}</span>-
                                 <span>{item.endDate}</span>
                             </div>
-                            <p className='text-4xl font-semibold tracking-widest leading-snug'>{item.description}</p>
+                            <p className='text-2xl md:text-4xl font-semibold tracking-widest leading-snug'>{item.description}</p>
                             <div className='flex items-center gap-4 justify-around py-5'>
                                 <p>{item.amount}</p>
                                 <ButtonLinkOrange href={`${item.link}`} name={'Book a ticket'}/>

@@ -29,28 +29,25 @@ const data = [
         id: 1,
         image: frame1,
         btnText: 'Wedding Planning',
-        details: [
-            {
-                title: 'Wedding Planning',
-                description: 'Our wedding planning service takes the stress out of your big day. From venue selection to day-of coordination, we ensure every detail is flawless so you can focus on celebrating ',
-                subTitle: ' What’s Included?',
-                list: [
-                    'Planning & Coordination – We handle scheduling, budgeting, and logistics.',
-                    "Venue & Vendor Selection – Helping you find the perfect location and reliable vendors.",
-                    "Theme & Decor Styling – Bringing your vision to life with expert design.",
-                    " Entertainment & Catering – Coordinating music, food, and drinks for a seamless experience.",
-                    "On-Site Management – Our team ensures everything runs smoothly on the day of your event."
-                ]
-            }
-        ]
+        details: {
+            title: 'Wedding Planning',
+            description: 'Our wedding planning service takes the stress out of your big day. From venue selection to day-of coordination, we ensure every detail is flawless so you can focus on celebrating ',
+            subTitle: ' What’s Included?',
+            list: [
+                'Planning & Coordination – We handle scheduling, budgeting, and logistics.',
+                "Venue & Vendor Selection – Helping you find the perfect location and reliable vendors.",
+                "Theme & Decor Styling – Bringing your vision to life with expert design.",
+                " Entertainment & Catering – Coordinating music, food, and drinks for a seamless experience.",
+                "On-Site Management – Our team ensures everything runs smoothly on the day of your event."
+            ]
+        }
 
     },
     {
         id: 2,
         image: frame2,
         btnText: 'Wedding Planning',
-        details: [
-            {
+        details: {
                 title: 'Wedding Planning',
                 description: 'Our wedding planning service takes the stress out of your big day. From venue selection to day-of coordination, we ensure every detail is flawless so you can focus on celebrating ',
                 subTitle: ' What’s Included?',
@@ -61,28 +58,26 @@ const data = [
                     " Entertainment & Catering – Coordinating music, food, and drinks for a seamless experience.",
                     "On-Site Management – Our team ensures everything runs smoothly on the day of your event."
                 ]
-            }
-        ]
+        }
+        
 
     },
     {
         id: 3,
         image: frame3,
         btnText: 'Wedding Planning',
-        details: [
-            {
-                title: 'Wedding Planning',
-                description: 'Our wedding planning service takes the stress out of your big day. From venue selection to day-of coordination, we ensure every detail is flawless so you can focus on celebrating ',
-                subTitle: ' What’s Included?',
-                list: [
-                    'Planning & Coordination – We handle scheduling, budgeting, and logistics.',
-                    "Venue & Vendor Selection – Helping you find the perfect location and reliable vendors.",
-                    "Theme & Decor Styling – Bringing your vision to life with expert design.",
-                    " Entertainment & Catering – Coordinating music, food, and drinks for a seamless experience.",
-                    "On-Site Management – Our team ensures everything runs smoothly on the day of your event."
-                ]
-            }
-        ]
+        details: {
+            title: 'Wedding Planning',
+            description: 'Our wedding planning service takes the stress out of your big day. From venue selection to day-of coordination, we ensure every detail is flawless so you can focus on celebrating ',
+            subTitle: ' What’s Included?',
+            list: [
+                'Planning & Coordination – We handle scheduling, budgeting, and logistics.',
+                "Venue & Vendor Selection – Helping you find the perfect location and reliable vendors.",
+                "Theme & Decor Styling – Bringing your vision to life with expert design.",
+                " Entertainment & Catering – Coordinating music, food, and drinks for a seamless experience.",
+                "On-Site Management – Our team ensures everything runs smoothly on the day of your event."
+            ]
+    }
 
     },
     {
@@ -143,6 +138,7 @@ const Service = () => {
         setOpenModal(false);
     };
 
+    console.log(selectedCard  +"ddd")
   return (
     <div className='min-h-screen'>
        <section >
@@ -217,9 +213,9 @@ const Service = () => {
             {/* modal */}
             <ModalComponent isOpen={openModal} onClose={closeModal}>
                 {selectedCard ? (
-                <div className='flex '>
-                    <div className='w-1/2 relative'>
-                        <span className='overflow-hidden absolute -z-10 inset-0'>
+                <div className='flex gap-4'>
+                    <div className='w-1/2 relative p-5'>
+                        <span className='overflow-hidden absolute z-10 inset-0 p-2 rounded-lg'>
                             <MotionImage 
                                 whileHover={{ scale: 1.2 }}
                                 transition={{ duration: 0.5 }}
@@ -227,8 +223,8 @@ const Service = () => {
                         </span>
                     </div>
                     <div className='w-1/2'>
-                        <p className='text-xl font-bold py-2'>{selectedCard.details.title}</p>
-                        <p className='text-neutral py-2'>{selectedCard.details.description}</p>
+                        <p className='text-xl font-bold py-2'>{selectedCard?.details?.title}</p>
+                        <p className='text-neutral py-2'>{selectedCard?.details?.description}</p>
                         <p className='font-semibold py-2'>{selectedCard.details.title}</p>
                         <ul className='list-disc px-5 text-neutral text-sm'>
                             {
