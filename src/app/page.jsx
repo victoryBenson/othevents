@@ -14,7 +14,7 @@ import { ButtonLinkOrange, ButtonLinkWhite } from '@/shared/ButtonLink';
 import SplitScreenCarousel from '@/components/OurExpertiseCarousel';
 import contactImg from '../../public/assets/img/contact.png'
 import Bookticket from '@/components/Bookticket';
-import { fadeIn, fadeInLeft } from '@/shared/Animations';
+// import { fadeIn, fadeInLeft } from '@/shared/Animations';
 
 export const fadeInVariants = {
   hidden: { opacity: 0, y: 50 },
