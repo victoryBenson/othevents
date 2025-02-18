@@ -12,6 +12,7 @@ import  planImg from '../../../public/assets/img/about-2.png'
 import "swiper/css";
 import "swiper/css/autoplay";
 import "swiper/css/pagination";
+import { fadeInVariants } from '../page'
 
 
 
@@ -82,7 +83,10 @@ const page = () => {
         </section>
             
         {/* contact us */}
-        <section className=' mt-10 lg:mt-40  h-full md:min-h-[90vh] overflow-hidden p-5 md:p-10 lg:p-20'>
+        <motion.section initial="hidden"
+            whileInView="visible"
+            viewport={{ amount: 0.3 }} 
+            variants={fadeInVariants}  className=' mt-10 lg:mt-40  h-full md:min-h-[90vh] overflow-hidden p-5 md:p-10 lg:p-20'>
             <div className=' h-full flex flex-col lg:flex-row justify-center items-center mx-auto gap-20 '>
                 <div className='md:w-1/2 '>
                     <p className='text-2xl lg:pb-16 md:text-4xl font-bold '>Get in Touch with PartyWithOTH</p>
@@ -110,10 +114,10 @@ const page = () => {
                     </form>
                 </div>
             </div>
-        </section>
+        </motion.section>
 
         {/* next event */}
-        <section className=' pt-40 h-full'>
+        <motion.section className='pt-40 h-full'>
             {/* <div className='flex h-full items-center'> */}
                 <div className='flex flex-col md:flex-row w-full h-full justify-between'>  
                     <div className='h-[70vh] w-full md:w-1/2 bg-primary/10 p-5 md:p-10 lg:p-20 flex flex-col justify-center space-y-5'>
@@ -128,7 +132,7 @@ const page = () => {
                     </div>
                 </div>
             {/* </div> */}
-        </section> 
+        </motion.section> 
     </>
   )
 }

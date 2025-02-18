@@ -3,7 +3,7 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 import "swiper/css/autoplay";
 import "swiper/css/pagination";
-import { Autoplay, Pagination } from "swiper/modules";
+import { Autoplay, Pagination, Navigation } from "swiper/modules";
 import truncateString from "@/utils/truncateString";
 import Image from "next/image";
 import slide1 from '../../public/assets/img/ourexpertise1.png'
@@ -50,7 +50,7 @@ const SplitScreenCarousel = () => {
         centeredSlides={true}
         breakpoints={{
             640: { slidesPerView: 1.2 }, 
-            1024: { slidesPerView: 1.5 },
+            1024: { slidesPerView: 2 },
         }}
         autoplay={{
             delay: 3000,
@@ -58,14 +58,14 @@ const SplitScreenCarousel = () => {
         }}
         loop={true} 
         pagination={{ clickable: true }} 
-        modules={[Autoplay, Pagination]}
+        modules={[Autoplay, Pagination,Navigation]}
         
         
         >
             {
                 slides.map((slide, index) => (
                     <SwiperSlide key={index}>
-                        <div className="rounded-lg text-center justify-between border border-gray-100/80 flex flex-col md:flex-row h-80">
+                        <div className="rounded-lg text-center justify-between border border-gray-100/80 flex flex-col md:flex-row h-80 w-full">
                             <div className="text-start p-2 md:p-5 lg:p-10 space-y-5 w-full h-1/2 md:h-full md:w-1/2 order-last md:order-first bg-white">
                                 <p className="flex  md:text-xl font-semibold p-1 ">
                                     <span className="text-primary border-r border-r-primary p-1 md:p-3">

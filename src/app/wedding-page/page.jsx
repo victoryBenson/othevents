@@ -23,6 +23,7 @@ import  frame3 from '../../../public/assets/img/h3.png'
 import  frame4 from '../../../public/assets/img/h4.png'
 import  frame5 from '../../../public/assets/img/h5.png'
 import  frame6 from '../../../public/assets/img/h6.png'
+import { fadeInVariants } from '../page';
 
 
 const slides = [
@@ -73,6 +74,8 @@ const page = () => {
       useEffect(() => {
           setTimeout(() => setIsVisible(true), 300)
       });
+
+      
 
   return (
     <>
@@ -126,7 +129,12 @@ const page = () => {
 
         </section>
 
-        <section className='px-5 md:px-10 lg:px-20 py-40' id='about'>
+        <motion.section  
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ amount: 0.3 }} 
+            variants={fadeInVariants}  
+            className='px-5 md:px-10 lg:px-20 py-40' id='about'>
             <div className='flex flex-col lg:flex-row justify-center items-center mx-auto gap-10'>
                 <div className='space-y-4 md:w-1/2'>
                     <h1 className="text-2xl lg:text-4xl  font-bold mb-4 py-5">What's this About</h1>
@@ -140,13 +148,19 @@ const page = () => {
                     </div>
                 </div>
             </div>
-        </section>
+        </motion.section>
 
-        <section id='video' className='px-5 md:px-10 lg:px-20 py-40'>
+        <motion.section initial="hidden"
+            whileInView="visible"
+            viewport={{ amount: 0.3 }} 
+            variants={fadeInVariants}  id='video' className='px-5 md:px-10 lg:px-20 py-40'>
             <Image src={thumbnail} alt={'video-image'} className='h-full w-full object-cover'/>
-        </section>
+        </motion.section>
 
-        <section className='px-5 md:px-10 lg:px-20 py-40'>
+        <motion.section initial="hidden"
+            whileInView="visible"
+            viewport={{ amount: 0.3 }} 
+            variants={fadeInVariants}  className='px-5 md:px-10 lg:px-20 py-40'>
             <h1 className="text-2xl lg:text-4xl  font-bold mb-4 py-5">What to Expect? </h1>
             <div className="w-full">
             <Swiper
@@ -186,9 +200,12 @@ const page = () => {
                 }
             </Swiper>
             </div>
-        </section>
+        </motion.section>
 
-        <section>
+        <motion.section initial="hidden"
+            whileInView="visible"
+            viewport={{ amount: 0.3 }} 
+            variants={fadeInVariants} >
             <div className='flex h-full md:h-[90vh] items-center'>
                 {
                     data.map((item) => (
@@ -215,11 +232,16 @@ const page = () => {
                     ))
                 }
             </div>
-        </section>
+        </motion.section>
 
         {/*  */}
         {/* about us */}
-        <section className='px-5 md:px-10 lg:px-20 py-40 bg-lightgray' id='about'>
+        <motion.section
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ amount: 0.3 }} 
+        variants={fadeInVariants} 
+         className='px-5 md:px-10 lg:px-20 py-40 bg-lightgray' id='about'>
             <div className='flex flex-col lg:flex-row justify-center items-center mx-auto gap-10'>
                 <div className='space-y-4 md:w-1/2'>
                 <h1 className="text-2xl lg:text-4xl  font-bold mb-4 py-5">The Wedding Fair '24 Highlights </h1>
@@ -245,7 +267,7 @@ const page = () => {
                     </div>
                 </div>
             </div>
-        </section>
+        </motion.section>
     </>
   )
 }

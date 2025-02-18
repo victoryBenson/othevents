@@ -15,12 +15,18 @@ import SplitScreenCarousel from '@/components/OurExpertiseCarousel';
 import contactImg from '../../public/assets/img/contact.png'
 import Bookticket from '@/components/Bookticket';
 
+export const fadeInVariants = {
+  hidden: { opacity: 0, y: 50 },
+  visible: { opacity: 1, y: 0, transition: { duration: 0.8 } },
+};
+
 const HeroHome = () => {
   const [isVisible, setIsVisible] = useState(false);
 
   useEffect(() => {
-      setTimeout(() => setIsVisible(true), 300)
-  });
+    setTimeout(() => setIsVisible(true), 300);
+  }, []);
+
 
 
   return (
@@ -70,8 +76,13 @@ const HeroHome = () => {
         </section>
 
         {/* about us */}
-        <section className='px-5 md:px-10 lg:px-20 py-40 bg-lightgray' id='about'>
-            <div className='flex flex-col lg:flex-row justify-center items-center mx-auto gap-10'>
+        <motion.section  className='px-5 md:px-10 lg:px-20 py-40' id='about'>
+            <motion.div  
+                initial="hidden"
+                whileInView="visible"
+                viewport={{ amount: 0.3 }} 
+                variants={fadeInVariants} 
+                className='flex flex-col lg:flex-row justify-center items-center mx-auto gap-10'>
                 <div className='space-y-4 md:w-1/2'>
                     <p className='text-2xl md:text-4xl font-bold'>At PartyWithOTH</p>
                     <Image src={icon} alt='serviceicon'/>
@@ -89,24 +100,42 @@ const HeroHome = () => {
                         </div>
                     </div>
                 </div>
-            </div>
-        </section>
+            </motion.div>
+        </motion.section>
 
         {/* our expertise */}
-        <section className='px-5 md:px-10 lg:px-20 py-40'>
+        <motion.section 
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ amount: 0.3 }} 
+            variants={fadeInVariants} 
+            className='px-5 md:px-10 lg:px-20 py-40 bg-lightgray'
+            >
             <h1 className="text-2xl lg:text-4xl  font-bold mb-4 py-5">
                 Our Expertise
             </h1>
             <SplitScreenCarousel/>
-        </section>
+        </motion.section>
 
         {/* book ticket */}
-        <section className=' py-40'>
+        <motion.section
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ amount: 0.3 }} 
+            variants={fadeInVariants} 
+            className=' pt-40'>
+
            <Bookticket/>
-        </section>
+           
+        </motion.section>
 
         {/* contact us */}
-        <section className=' mt-10 lg:mt-40  h-full md:min-h-[90vh] bg-darkgray overflow-hidden p-5 md:p-10 lg:p-20'>
+        <motion.section 
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ amount: 0.3 }} 
+            variants={fadeInVariants} 
+            className='h-full md:min-h-[90vh] bg-darkgray overflow-hidden p-5 md:p-10 lg:p-20'>
             <p className='text-2xl pb-6 lg:pb-16 text-white md:text-4xl font-bold '>Will You love to reach out to us?</p>
             <div className=' h-full flex flex-col lg:flex-row justify-center items-center mx-auto gap-20 '>
                 <div className='md:w-1/2 '>
@@ -136,7 +165,7 @@ const HeroHome = () => {
                     </form>
                 </div>
             </div>
-        </section>
+        </motion.section>
 
     </Fragment>
   )

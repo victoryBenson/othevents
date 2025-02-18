@@ -9,6 +9,7 @@ import Image from 'next/image'
 import HeroComponent from '@/components/HeroComponent';
 import heroImg from '../../../public/assets/img/services.png'
 import  planImg from '../../../public/assets/img/planNextEvent.png'
+import { fadeInVariants } from '../page'
 
 export const rentalData = [
     {
@@ -61,13 +62,22 @@ const page = () => {
         <section>
             <HeroComponent title={'Rentals'} image={heroImg}/>
         </section>
-        <section id='rentals'className='px-5 md:px-10 lg:px-20 py-40 bg-lightgray'>
+        <motion.section
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ amount: 0.3 }} 
+            variants={fadeInVariants} 
+         id='rentals'className='px-5 md:px-10 lg:px-20 py-40 bg-lightgray'
+         >
             <h1 className="text-2xl lg:text-4xl  font-bold mb-4 py-5">Rentals  </h1>
             <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8'>
                 {
                     rentalData.map((item) => {
                         return (
-                            <div key={item.id} className='h-[70vh] gap-4 rounded-lg overflow-hidden bg-white'>
+                            <motion.div initial="hidden"
+                                whileInView="visible"
+                                viewport={{ amount: 0.3 }} 
+                                variants={fadeInVariants}  key={item.id} className='h-[70vh] gap-4 rounded-lg overflow-hidden bg-white'>
                                 <motion.div
                                     whileHover={{ scale: 1.05 }} 
                                     transition={{ type: "keyframes", stiffness: 300 }} 
@@ -83,14 +93,14 @@ const page = () => {
                                         </div>
                                     </div>
                                 </div>
-                            </div>
+                            </motion.div>
                         )
                     })
                 }
             </div>
-        </section>
+        </motion.section>
         {/* next event */}
-        <section className=' py-40 h-full'>
+        <section className=' pt-40 h-full'>
             {/* <div className='flex h-full items-center'> */}
                 <div className='flex flex-col md:flex-row w-full h-full justify-between'>  
                     <div className='h-[70vh] w-full md:w-1/2 bg-primary/10 p-5 md:p-10 lg:p-20 flex flex-col justify-center space-y-5'>

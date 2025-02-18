@@ -16,6 +16,7 @@ import "swiper/css/autoplay";
 import "swiper/css/pagination";
 import { Autoplay, Pagination } from "swiper/modules";
 import { TfiQuoteRight, TfiQuoteLeft } from "react-icons/tfi";
+import { fadeInVariants } from '../page'
 
 
 export const rentalData = [
@@ -83,7 +84,13 @@ const page = () => {
         <section>
             <HeroComponent title={'Creating Unforgettable Events with Passion & Precision'} image={heroImg}/>
         </section>
-        <section className='px-5 md:px-10 lg:px-20 py-40' id='about'>
+
+        <motion.section
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ amount: 0.3 }} 
+            variants={fadeInVariants} 
+         className='px-5 md:px-10 lg:px-20 py-40' id='about'>
             <div className='flex flex-col lg:flex-row justify-center items-center mx-auto gap-10'>
                 <div className='space-y-4 md:w-1/2'>
                     <h1 className="text-2xl lg:text-4xl  font-bold mb-4 py-5">Who We Are </h1>
@@ -97,9 +104,14 @@ const page = () => {
                     </div>
                 </div>
             </div>
-        </section>
+        </motion.section>
 
-        <section className='px-5 md:px-10 lg:px-20 py-40'>
+        <motion.section
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ amount: 0.3 }} 
+            variants={fadeInVariants}  
+        className='px-5 md:px-10 lg:px-20 py-40'>
             <div className="w-full">
             <Swiper
             spaceBetween={20} 
@@ -138,10 +150,15 @@ const page = () => {
                 }
             </Swiper>
             </div>
-        </section>
+        </motion.section>
 
         {/* next event */}
-        <section className=' pt-40 h-full'>
+        <motion.section
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ amount: 0.3 }} 
+            variants={fadeInVariants} 
+            className=' pt-40 h-full'>
             {/* <div className='flex h-full items-center'> */}
                 <div className='flex flex-col md:flex-row w-full h-full justify-between'>  
                     <div className='h-[70vh] w-full md:w-1/2 bg-primary/10 p-5 md:p-10 lg:p-20 flex flex-col justify-center space-y-5'>
@@ -156,7 +173,7 @@ const page = () => {
                     </div>
                 </div>
             {/* </div> */}
-        </section> 
+        </motion.section> 
     </>
   )
 }
