@@ -7,7 +7,7 @@ import { motion } from 'framer-motion';
 import { Button, ButtonLinkOrange } from '@/shared/ButtonLink'
 import Image from 'next/image'
 import HeroComponent from '@/components/HeroComponent';
-import heroImg from '../../../public/assets/img/about-us.png'
+import heroImg from '../../../public/assets/img/pexels-2.webp'
 import  planImg from '../../../public/assets/img/about-2.png'
 import aboutImg from '../../../public/assets/img/aboutUs.png'
 import { Swiper, SwiperSlide } from "swiper/react";

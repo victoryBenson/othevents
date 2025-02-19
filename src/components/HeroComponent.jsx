@@ -16,7 +16,7 @@ const HeroComponent = ({title, image}) => {
     <section
             className='relative  h-[50vh] md:h-[90vh] z-50'>
             
-            <span className='bg-darkgray/30 absolute inset-0 -z-10'></span>
+            <span className='bg-darkgray/20 absolute inset-0 -z-10'></span>
 
             <span className='absolute inset-0 -z-20'>
                 <Image src={image} alt={image} className='h-full w-full object-cover'/>
@@ -25,9 +25,9 @@ const HeroComponent = ({title, image}) => {
                 initial={{ x: "-100%", opacity: 0 }} 
                 animate={{ x: isVisible ? "0%" : "-100%", opacity: isVisible ? 1 : 0 }}
                 transition={{ duration: 0.6, ease: "easeOut" }}
-                className='text-white flex justify-center h-full flex-col space-y-6 pl-5 lg:pl-20'
+                className='text-white flex justify-center items-center h-full font-serif'
                 >
-                <p className='text-2xl md:text-4xl font-bold text-center'>
+                <p className='text-2xl sm:text-3xl md:text-5xl font-bold text-center'>
                 {title}
                 </p>
                

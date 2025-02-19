@@ -17,14 +17,16 @@ export default {
       },
     },
     backgroundImage: {
-      'homeBg': "url('/assets/img/aboutUs.png')",
+      'homeBg': "url('/assets/img/try1.jpg')",
       'ticketImg': "url('/assets/img/ticket-img.png')"
     },
     fontFamily: {
       sans: ["Poppins", 'sans'],
-      // serif: ["Mulish", 'serif'],
+      serif: ["Playfair Display", 'serif'],
       // desyrel: ['Desyrel', 'cursive']
     },
   },
+
   plugins: [],
 };
+

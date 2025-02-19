@@ -7,7 +7,7 @@ import { motion } from 'framer-motion';
 import { Button, ButtonLinkOrange } from '@/shared/ButtonLink'
 import Image from 'next/image'
 import HeroComponent from '@/components/HeroComponent';
-import heroImg from '../../../public/assets/img/services.png'
+import heroImg from '../../../public/assets/img/serve.png'
 import  planImg from '../../../public/assets/img/planNextEvent.png'
 import { fadeInVariants } from '../page'
 

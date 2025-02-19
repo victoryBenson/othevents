@@ -1,7 +1,7 @@
 'use client'
 import HeroComponent from '@/components/HeroComponent';
 import React, { useState } from 'react';
-import heroImg from '../../../public/assets/img/services.png';
+import heroImg from '../../../public/assets/img/serve2.png';
 import { Link as ScrollTo } from "react-scroll";
 import { AiOutlineDown } from 'react-icons/ai';
 import aboutImg from '../../../public/assets/img/about-us.png'
@@ -164,7 +164,7 @@ const Service = () => {
             whileInView="visible"
             viewport={{ amount: 0.3 }} 
             variants={fadeInVariants}  
-            className='px-5 md:px-10 lg:px-20 py-40' id='about'>
+            className='px-5 md:px-10 lg:px-20 py-20 md:py-40' id='about'>
             <div className='flex flex-col lg:flex-row justify-center items-center mx-auto gap-10'>
                 <div className='space-y-4 md:w-1/2'>
                     <p className=' sm:text-lg lg:text-2xl leading-8 py-5 ld:text-start text-neutral'>

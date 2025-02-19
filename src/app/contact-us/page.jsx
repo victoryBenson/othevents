@@ -7,7 +7,7 @@ import { motion } from 'framer-motion';
 import { Button, ButtonLinkOrange, ButtonLinkWhite } from '@/shared/ButtonLink'
 import Image from 'next/image'
 import HeroComponent from '@/components/HeroComponent';
-import heroImg from '../../../public/assets/img/services.png'
+import heroImg from '../../../public/assets/img/pexel1.webp'
 import  planImg from '../../../public/assets/img/about-2.png'
 import "swiper/css";
 import "swiper/css/autoplay";

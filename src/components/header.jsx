@@ -98,7 +98,7 @@ const Header = () => {
         </div>
 
         <div className='hidden md:flex '>
-            <Link href={'#'} className='bg-primary text-white p-3 rounded'>Book a call</Link>
+            <Link href={'#'} className='bg-primary text-white p-3 px-8 font-semibold rounded'>Book a call</Link>
         </div>
 
         {/* mobile view */}

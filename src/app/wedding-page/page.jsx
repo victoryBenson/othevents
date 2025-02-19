@@ -1,7 +1,7 @@
 'use client'
 import React, {Fragment, useEffect, useState} from 'react'
 import { motion } from 'framer';
-import  aboutImg from '../../../public/assets/img/ticket-img.png'
+import  aboutImg from '../../../public/assets/img/wedpage.png'
 import  thumbnail from '../../../public/assets/img/thumbnail.png'
 import { ButtonLinkOrange } from '@/shared/ButtonLink';
 import { Link as ScrollTo } from "react-scroll";
@@ -83,7 +83,7 @@ const page = () => {
         <section
             className='relative h-[90vh] bg-homeBg bg-cover bg-no-repeat bg-center z-50'>
             
-            <span className='bg-darkgray/40 absolute inset-0 -z-10'></span>
+            <span className='bg-darkgray/20 absolute inset-0 -z-10'></span>
 
             <span className='absolute inset-0 -z-20'>
                 <Image src={aboutImg} alt={'hero-image'} className='h-full w-full object-cover'/>
@@ -93,12 +93,12 @@ const page = () => {
                 initial={{ x: "-100%", opacity: 0 }} 
                 animate={{ x: isVisible ? "0%" : "-100%", opacity: isVisible ? 1 : 0 }}
                 transition={{ duration: 0.6, ease: "easeOut" }}
-                className='text-white flex justify-center h-full flex-col space-y-6 pl-5 lg:pl-20'
+                className='text-white flex justify-center h-full flex-col space-y-10 pl-5 lg:pl-20'
                 >
-                <p className='text-2xl md:text-4xl font-bold'>
+                <p className='text-2xl sm:text-3xl md:text-5xl font-bold font-serif'>
                     Experience the Ultimate Wedding <br /> Showcase at Wedding Fair '25
                 </p>
-                <p className='text-lg'>
+                <p className='text-lg md:text-2xl'>
                     Join us for an exclusive wedding event featuring top vendors, <br /> bridal fashion, and expert planners. Secure your spot today
                 </p>
                 <div className='flex space-x-4'>
@@ -139,7 +139,7 @@ const page = () => {
                 <div className='space-y-4 md:w-1/2'>
                     <h1 className="text-2xl lg:text-4xl  font-bold mb-4 py-5">What's this About</h1>
                     <p className=' sm:text-lg lg:text-2xl leading-8 py-5 ld:text-start text-neutral'>
-                    Text="PartyWithOTH is a premier event management and rental service dedicated to turning your special moments into extraordinary experiences. With a passion for creativity and attention to detail, we bring visions to life—whether it’s an elegant wedding, a corporate gathering, or a lively celebration";
+                    PartyWithOTH is a premier event management and rental service dedicated to turning your special moments into extraordinary experiences. With a passion for creativity and attention to detail, we bring visions to life—whether it’s an elegant wedding, a corporate gathering, or a lively celebration
                     </p>
                 </div>
                 <div className='md:w-1/2'>

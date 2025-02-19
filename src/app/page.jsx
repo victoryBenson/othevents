@@ -14,6 +14,7 @@ import { ButtonLinkOrange, ButtonLinkWhite } from '@/shared/ButtonLink';
 import SplitScreenCarousel from '@/components/OurExpertiseCarousel';
 import contactImg from '../../public/assets/img/contact.png'
 import Bookticket from '@/components/Bookticket';
+import Link from 'next/link';
 // import { fadeIn, fadeInLeft } from '@/shared/Animations';
 
 export const fadeInVariants = {
@@ -36,26 +37,32 @@ const HeroHome = () => {
         <section
             className='relative h-[90vh] bg-homeBg bg-cover bg-no-repeat bg-center z-50'>
             
-            <span className='bg-darkgray/40 absolute inset-0 -z-10'></span>
+            <span className='bg-linear-to-r bg-darkgray/20 absolute inset-0 -z-10'></span>
 
             <motion.div
                 initial={{ x: "-100%", opacity: 0 }} 
                 animate={{ x: isVisible ? "0%" : "-100%", opacity: isVisible ? 1 : 0 }}
                 transition={{ duration: 0.6, ease: "easeOut" }}
-                className='text-white flex justify-center h-full flex-col space-y-6 pl-5 lg:pl-20'
+                className='text-white flex justify-center  h-full flex-col space-y-10 md:pl-5 px-2 lg:pl-20'
                 >
-                <p className='text-2xl md:text-4xl font-bold'>
-                Make Every Event Unforgettable, <br /> with PartyWithOTH!
+                <p className='text-2xl sm:text-4xl md:text-5xl font-bold font-serif'>
+                Make Every Event Unforgettable, <br className="hidden md:flex"/> with PartyWithOTH!
                 </p>
-                <p className='text-lg'>From elegant weddings to corporate galas, we bring your vision to life.</p>
-                <div className='flex space-x-4'>
-                    <ButtonLinkOrange href={"#"} name={'Book A Call'}/>
-                    <ButtonLinkWhite href={"#"} name={'Explore Rentals'}/>
+                <p className='sm:text-2xl'>From elegant weddings to corporate galas, we bring your vision to life.</p>
+                <div className='flex gap-4'>
+                    <motion.div className='' whileHover={{ scale: 1.05 }} transition={{duration: 0.5}}>
+                        <Link href={'#'} className='bg-primary text-white py-4 px-8 font-semibold rounded'>Book a call</Link>
+                    </motion.div>
+                    <motion.div className=''  whileHover={{ scale: 1.05 }} transition={{duration: 0.5}}>
+                        <Link href={'#'} className='bg-white text-primary py-4 px-8 font-semibold rounded'>Explore Rentals</Link>
+                    </motion.div>
+                    {/* <ButtonLinkOrange href={"#"} name={'Book A Call'}/>
+                    <ButtonLinkWhite href={"#"} name={'Explore Rentals'}/> */}
                 </div>
             </motion.div>
 
-            {/* scroll top */}
-            <div className='absolute rounded-full w-10 h-10 inset-0 right-0 left-0 bg-white hidden'>
+             {/* scroll top */}
+            <div className='absolute bottom-5 justify-center flex  items-center w-full'>
                 <ScrollTo
                     to="about"
                     offset={0}
@@ -63,11 +70,12 @@ const HeroHome = () => {
                     spy={true}
                     smooth={true}
                     duration={800}
-                    className="absolute bottom-[ top-40 inset-0  w-auto inline-block -translate-x-1/2 cursor-pointer"
-                >
-                    <AiOutlineDown className=' p-3 rounded-full' />
+                    className="bg-darkgray/60 animate-bounce p-5 rounded-full w-auto inline-block -translate-x-1/2 cursor-pointer"
+                > 
+                    <AiOutlineDown size={20} className=' text-white' />
                 </ScrollTo>
             </div>
+   
 
             {/* carousel */}
             <div className='hidden'>
@@ -75,6 +83,7 @@ const HeroHome = () => {
             </div>
 
         </section>
+        
 
         {/* about us */}
         <motion.section  className='px-5 md:px-10 lg:px-20 py-40' id='about'>
@@ -105,6 +114,7 @@ const HeroHome = () => {
                 </div>
             </motion.div>
         </motion.section>
+        
 
         {/* our expertise */}
         <motion.section 

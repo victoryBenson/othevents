@@ -3,12 +3,14 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 import "swiper/css/autoplay";
 import "swiper/css/pagination";
-import { Autoplay, Pagination, Navigation } from "swiper/modules";
+import { Autoplay, Pagination, Navigation, FreeMode } from "swiper/modules";
 import truncateString from "@/utils/truncateString";
 import Image from "next/image";
-import slide1 from '../../public/assets/img/ourexpertise1.png'
+import slide1 from '../../public/assets/img/try2.jpg'
 import slide2 from '../../public/assets/img/ourexpertise2.png'
-import slide3 from '../../public/assets/img/ourexpertise2.png'
+import slide3 from '../../public/assets/img/after-party.webp'
+import frame1 from '../../public/assets/img/frame1.png'
+import frame2 from '../../public/assets/img/frame2.png'
 
 
 const slides = [
@@ -28,18 +30,18 @@ const slides = [
     },
     {
         id: 3,
-        title: 'Catering Services',
+        title: 'After Party',
         image: slide3,
         description: 'From elegant weddings to corporate galas, we bring your vision to life.',
         link:'#'
     },
-    {
-        id: 4,
-        title: 'Catering Services',
-        image: slide3,
-        description: 'From elegant weddings to corporate galas, we bring your vision to life.',
-        link:'#'
-    }
+    // {
+    //     id: 4,
+    //     title: 'Catering Services',
+    //     image: slide3,
+    //     description: 'From elegant weddings to corporate galas, we bring your vision to life.',
+    //     link:'#'
+    // }
 ]
 const SplitScreenCarousel = () => {
   return (
@@ -47,10 +49,11 @@ const SplitScreenCarousel = () => {
         <Swiper
         spaceBetween={20} 
         slidesPerView={1} 
+        freeMode={2}
         centeredSlides={true}
         breakpoints={{
             640: { slidesPerView: 1.2 }, 
-            1024: { slidesPerView: 2 },
+            1024: { slidesPerView: 1.2 },
         }}
         autoplay={{
             delay: 3000,
@@ -58,7 +61,7 @@ const SplitScreenCarousel = () => {
         }}
         loop={true} 
         pagination={{ clickable: true }} 
-        modules={[Autoplay, Pagination,Navigation]}
+        modules={[Autoplay, Pagination,Navigation, FreeMode ]}
         
         
         >
@@ -71,11 +74,11 @@ const SplitScreenCarousel = () => {
                                     <span className="text-primary border-r border-r-primary p-1 md:p-3">
                                         {slide.id}
                                     </span>
-                                    <span className=" p-1 md:p-3 ">
+                                    <span className=" p-1 md:p-3 text-lg md:text-3xl font-serif">
                                         {slide.title}
                                     </span>
                                 </p>
-                                <p className="pb-2 md:py-4">{truncateString(slide.description, 100)}</p>
+                                <p className="pb-2 md:py-4 text-base md:text-xl">{truncateString(slide.description, 100)}</p>
                                 <a href={slide.link} className="text-primary" >View More</a>
                             </div>
                             <div className="w-full md:w-1/2 h-1/2 md:h-full ">
