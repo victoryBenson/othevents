@@ -9,8 +9,8 @@ import Image from "next/image";
 import slide1 from '../../public/assets/img/try2.jpg'
 import slide2 from '../../public/assets/img/ourexpertise2.png'
 import slide3 from '../../public/assets/img/after-party.webp'
-import frame1 from '../../public/assets/img/frame1.png'
-import frame2 from '../../public/assets/img/frame2.png'
+// import frame1 from '../../public/assets/img/frame1.png'
+// import frame2 from '../../public/assets/img/frame2.png'
 
 
 const slides = [
@@ -35,13 +35,6 @@ const slides = [
         description: 'From elegant weddings to corporate galas, we bring your vision to life.',
         link:'#'
     },
-    // {
-    //     id: 4,
-    //     title: 'Catering Services',
-    //     image: slide3,
-    //     description: 'From elegant weddings to corporate galas, we bring your vision to life.',
-    //     link:'#'
-    // }
 ]
 const SplitScreenCarousel = () => {
   return (
