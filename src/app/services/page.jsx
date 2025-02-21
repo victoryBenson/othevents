@@ -19,6 +19,7 @@ import rent2Img from '../../../public/assets/img/rent2.png'
 import rent3Img from '../../../public/assets/img/rent3.png'
 import Bookticket from '@/components/Bookticket';
 import { fadeInVariants } from '../page';
+import Link from 'next/link';
 
 
 
@@ -46,9 +47,9 @@ const data = [
     {
         id: 2,
         image: frame2,
-        btnText: 'Wedding Planning',
+        btnText: 'Corporate Events',
         details: {
-                title: 'Wedding Planning',
+                title: 'Corporate Events',
                 description: 'Our wedding planning service takes the stress out of your big day. From venue selection to day-of coordination, we ensure every detail is flawless so you can focus on celebrating ',
                 subTitle: ' What’s Included?',
                 list: [
@@ -65,9 +66,9 @@ const data = [
     {
         id: 3,
         image: frame3,
-        btnText: 'Wedding Planning',
+        btnText: 'Birthday & Private Parties',
         details: {
-            title: 'Wedding Planning',
+            title: 'Birthday & Private Parties',
             description: 'Our wedding planning service takes the stress out of your big day. From venue selection to day-of coordination, we ensure every detail is flawless so you can focus on celebrating ',
             subTitle: ' What’s Included?',
             list: [
@@ -83,9 +84,9 @@ const data = [
     {
         id: 4,
         image: frame4,
-        btnText: 'Wedding Planning',
+        btnText: 'Custom Events',
         details: {
-                title: 'Wedding Planning',
+                title: 'Custom Events',
                 description: 'Our wedding planning service takes the stress out of your big day. From venue selection to day-of coordination, we ensure every detail is flawless so you can focus on celebrating ',
                 subTitle: ' What’s Included?',
                 list: [
@@ -164,10 +165,10 @@ const Service = () => {
             whileInView="visible"
             viewport={{ amount: 0.3 }} 
             variants={fadeInVariants}  
-            className='px-5 md:px-10 lg:px-20 py-20 md:py-40' id='about'>
-            <div className='flex flex-col lg:flex-row justify-center items-center mx-auto gap-10'>
+            className='px-5 md:px-10 lg:px-20 py-10 md:py-30' id='about'>
+            <div className='flex flex-col md:flex-row justify-center items-center mx-auto gap-10'>
                 <div className='space-y-4 md:w-1/2'>
-                    <p className=' sm:text-lg lg:text-2xl leading-8 py-5 ld:text-start text-neutral'>
+                    <p className=' sm:text-lg lg:text-2xl text-justify md:text-start leading-8 py-5 ld:text-start text-neutral'>
                         At PartyWithOTH, we specialize in crafting unforgettable events, handling every detail so you can enjoy the moment. From weddings to corporate functions, our expert team ensures seamless planning and execution.
                     </p>
                 </div>
@@ -185,8 +186,8 @@ const Service = () => {
             viewport={{ amount: 0.3 }} 
             variants={fadeInVariants} 
             id='services' 
-            className='px-5 md:px-10 lg:px-20 py-40 '>
-            <h1 className="text-2xl lg:text-4xl  font-bold mb-4 py-5">Our Event Management Services  </h1>
+            className='px-5 md:px-10 lg:px-20 py-10 md:py-30 '>
+            <h1 className="text-2xl lg:text-4xl font-bold mb-4 py-5">Our Event Management Services  </h1>
             <div className='flex justify-center items-center'>
                 <div className='grid  grid-cols-1 sm:grid-cols-2 w-full gap-8'>
                     {
@@ -213,16 +214,17 @@ const Service = () => {
             {/* modal */}
             <ModalComponent isOpen={openModal} onClose={closeModal}>
                 {selectedCard ? (
-                <div className='flex gap-4'>
-                    <div className='w-1/2 relative p-5'>
-                        <span className='overflow-hidden absolute z-10 inset-0 p-2 rounded-lg'>
+                <div className='flex flex-col lg:flex-row  gap-4 h-full md:m-5'>
+                    <div className='w-full lg:w-1/2 relative p-5 h-40 lg:h-[100%] overflow-hidden hidden lg:flex'>
+                        {/* <span className='overflow-hidden absolute z-10 inset-0 p-2 rounded-lg h-full'> */}
                             <MotionImage 
                                 whileHover={{ scale: 1.2 }}
                                 transition={{ duration: 0.5 }}
-                                src={selectedCard.image} alt='image-' className='h-full w-full object-cover rounded-lg'/>
-                        </span>
+                                src={selectedCard.image} alt='image-' className='h-full w-full object-cover rounded-lg absolute z-10 inset-0'/>
+                        {/* </span> */}
+
                     </div>
-                    <div className='w-1/2'>
+                    <div className='w-full lg:w-1/2'>
                         <p className='text-xl font-bold py-2'>{selectedCard?.details?.title}</p>
                         <p className='text-neutral py-2'>{selectedCard?.details?.description}</p>
                         <p className='font-semibold py-2'>{selectedCard.details.title}</p>
@@ -233,7 +235,7 @@ const Service = () => {
                                 })
                             }
                         </ul>
-                        <div className='flex justify-end my-2'>
+                        <div className='flex justify-end my-5'>
                             <ButtonLinkOrange name={'Book a Call'} link={'#'}/>
                         </div>
                     </div>
@@ -251,9 +253,9 @@ const Service = () => {
             whileInView="visible"
             viewport={{ amount: 0.3 }} 
             variants={fadeInVariants} 
-            id='rentals'className='px-5 md:px-10 lg:px-20 py-40 bg-lightgray'>
+            id='rentals'className='px-5 md:px-10 lg:px-20 py-10 md:py-30'>
             <h1 className="text-2xl lg:text-4xl  font-bold mb-4 py-5">Rentals  </h1>
-            <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8'>
+            <div className='grid grid-cols-2 lg:grid-cols-3 gap-8'>
                 {
                     rentalData.map((item) => {
                         return (
@@ -264,13 +266,17 @@ const Service = () => {
                                     className='bg-white border h-2/3'>
                                     <Image src={item.image} alt='rental' className='h-full w-full object-cover rounded-lg'/>
                                 </motion.div>
-                                <div className='h-full px-3 '>
+                                <div className='h-full px-3 w-full'>
                                     <h2 className='text-lg font-semibold py-2'>{item.title}</h2>
-                                    <div className='flex justify-between items-center'>
-                                        <p className='text-neutral'>${item.price}</p>
-                                        <div className='capitalize'>
+                                    <div className='py-3 rounded flex justify-center items-center text-center border border-primary w-full'>
+                                        <Link href={item.btnText} className='text-primary rounded h-full w-full'>Learn More</Link>
+                                    </div>
+                                    <div className='flex justify-between items-center '>
+                                        {/* <p className='text-neutral'>${item.price}</p> */}
+                                        {/* <div className='capitalize'>
                                             <Button name={item.btnText}/>
-                                        </div>
+                                        </div> */}
+                                        
                                     </div>
                                 </div>
                             </div>
@@ -286,7 +292,7 @@ const Service = () => {
                     whileInView="visible"
                     viewport={{ amount: 0.3 }} 
                     variants={fadeInVariants} 
-         className=' pt-40 h-full'>
+         className='pt-10 md:pt-30 h-full'>
             {/* <div className='flex h-full items-center'> */}
                 <div className='flex flex-col md:flex-row w-full h-full justify-between'>  
                     <div className='h-[70vh] w-full md:w-1/2 bg-primary/10 p-5 md:p-10 lg:p-20 flex flex-col justify-center space-y-5'>

@@ -32,7 +32,7 @@ const ButtonLinkWhite = ({link, name}) => {
 
   const Button = ({name}) => {
     return (
-        <motion.div className='overflow-hidden p-3' whileHover={{ scale: 1.05 }} transition={{duration: 0.5}}>
+        <motion.div className='overflow-hidden p-3 w-full' whileHover={{ scale: 1.05 }} transition={{duration: 0.5}}>
             <p className='p-3 bg-white text-primary border-primary rounded border text-base cursor-pointer'>{name}</p>
         </motion.div>   
     )
