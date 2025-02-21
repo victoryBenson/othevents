@@ -19,21 +19,21 @@ const slides = [
         title: 'Event Planning',
         image: slide1,
         description: 'From elegant weddings to corporate galas, we bring your vision to life.',
-        link:'#'
+        link:'services'
     },
     {
         id: 2,
         title: 'Rental Service',
         image: slide2,
         description: 'From elegant weddings to corporate galas, we bring your vision to life.',
-        link:'#'
+        link:'services'
     },
     {
         id: 3,
         title: 'After Party',
         image: slide3,
         description: 'From elegant weddings to corporate galas, we bring your vision to life.',
-        link:'#'
+        link:'services'
     },
 ]
 const SplitScreenCarousel = () => {
@@ -46,7 +46,7 @@ const SplitScreenCarousel = () => {
         centeredSlides={true}
         breakpoints={{
             640: { slidesPerView: 1.2 }, 
-            1024: { slidesPerView: 1.2 },
+            1024: { slidesPerView: 1 },
         }}
         autoplay={{
             delay: 3000,
@@ -61,7 +61,7 @@ const SplitScreenCarousel = () => {
             {
                 slides.map((slide, index) => (
                     <SwiperSlide key={index}>
-                        <div className="rounded-lg text-center justify-between border border-gray-100/80 flex flex-col md:flex-row h-80 w-full">
+                        <div className="rounded-lg text-center justify-between border border-gray-100/80 flex flex-col md:flex-row h-96 sm:h-80 w-full">
                             <div className="text-start p-2 md:p-5 lg:p-10 space-y-5 w-full h-1/2 md:h-full md:w-1/2 order-last md:order-first bg-white">
                                 <p className="flex  md:text-xl font-semibold p-1 ">
                                     <span className="text-primary border-r border-r-primary p-1 md:p-3">

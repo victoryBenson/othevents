@@ -109,7 +109,7 @@ const Header = () => {
                     <motion.div 
                         initial={{ x: "100%" }}
                         animate={{ x: showmenu ? 0 : "100%" }}
-                        transition={{ type: "tween", stiffness: 120, duration: 1 }}
+                        transition={{ type: "keyframe", stiffness: 120, duration: 1 }}
                         className='fixed inset-0 z-[999] bg-white/20 h-screen flex justify-end '>
                         <ul className="bg-white space-y-8 text-black h-full w-full sm:w-2/3 p-5 text-center shadow-lg">
                             <li>
