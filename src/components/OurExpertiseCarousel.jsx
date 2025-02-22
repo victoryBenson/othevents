@@ -42,7 +42,7 @@ const SplitScreenCarousel = () => {
         <Swiper
         spaceBetween={20} 
         slidesPerView={1} 
-        freeMode={2}
+        // freeMode={2}
         centeredSlides={true}
         breakpoints={{
             640: { slidesPerView: 1.2 }, 

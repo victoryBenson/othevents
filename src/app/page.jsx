@@ -16,12 +16,43 @@ import contactImg from '../../public/assets/img/contact.png'
 import Bookticket from '@/components/Bookticket';
 import Link from 'next/link';
 import { fadeIn } from '@/shared/GlobalAnimation';
-// import { fadeIn, fadeInLeft } from '@/shared/Animations';
+import { Swiper, SwiperSlide } from "swiper/react";
+import "swiper/css";
+import "swiper/css/autoplay";
+import "swiper/css/pagination";
+import { Autoplay, Pagination, Navigation } from "swiper/modules";
+import  hero1 from '../../public/assets/img/webp1.png'
+import  hero2 from '../../public/assets/img/webp2.png'
+import  hero3 from '../../public/assets/img/webp3.png'
 
 export const fadeInVariants = {
   hidden: { opacity: 0, y: 50 },
   visible: { opacity: 1, y: 0, transition: { duration: 0.8 } },
 };
+
+const heroDisplay = [
+    {
+        id: 1,
+        title: "Wedding Planning",
+        desc: "From elegant weddings to corporate galas, we bring your vision to life.",
+        image: hero1,
+        image2: hero3
+    },
+    {
+        id: 2,
+        title: "Corporate Events",
+        desc: "From elegant weddings to corporate galas, we bring your vision to life.",
+        image: hero2,
+        image2: hero1
+    },
+    {
+        id: 3,
+        title: "Birthday Parties",
+        desc: "From elegant weddings to corporate galas, we bring your vision to life.",
+        image: hero3,
+        image2: hero2
+    },
+]
 
 const HeroHome = () => {
   const [isVisible, setIsVisible] = useState(false);
@@ -41,16 +72,13 @@ const HeroHome = () => {
             <span className='bg-linear-to-r bg-darkgray/20 absolute inset-0 -z-10'></span>
 
             <motion.div
-                // initial={{ x: "-100%", opacity: 0 }} 
-                // animate={{ x: isVisible ? "0%" : "-100%", opacity: isVisible ? 1 : 0 }}
-                // transition={{ duration: 0.6, ease: "easeOut" }}
                 {...{ ...fadeIn, transition: { delay: 0.5 } }}
                 className='text-white flex justify-center  h-full flex-col space-y-10 pl-3 md:pl-5 lg:pl-20'
                 >
                 <p className='text-2xl sm:text-4xl md:text-5xl font-bold font-serif'>
                 Make Every Event Unforgettable, <br className="hidden md:flex"/> with PartyWithOTH!
                 </p>
-                <p className='sm:text-2xl'>From elegant weddings to corporate galas, we bring your vision to life.</p>
+                <p className='sm:text-2xl'>From elegant weddings to corporate galas, <br/> we bring your vision to life.</p>
                 <div className='flex gap-4'>
                     <motion.div className='' whileHover={{ scale: 1.05 }} transition={{duration: 0.5}}>
                         <Link href={'#'} className='bg-primary text-white py-4 px-6 md:px-8 font-semibold rounded'>Book a call</Link>
@@ -80,8 +108,50 @@ const HeroHome = () => {
    
 
             {/* carousel */}
-            <div className='hidden'>
-                <HeroHomeCarousel/>
+            <div className='absolute bottom-10 right-5 w-1/2 h-auto z-10 overflow-hidden hidden lg:flex'>
+                <Swiper
+                modules={[Autoplay, Pagination, Navigation]}
+                slidesPerView={1}
+                spaceBetween={20} 
+                autoplay={{
+                    delay: 3000, 
+                    disableOnInteraction: false,
+                }}
+                pagination={{ clickable: true }} 
+                navigation 
+                loop={true} 
+                className="mySwiper"
+
+
+                >
+                    {
+                        heroDisplay.map((slide, index) => (
+                            <SwiperSlide key={index}>
+                                < div className=" h-full  relative overflow-hidden text-center justify-center items-center flex flex-col">
+                                
+                                    
+                                    {/* <Image src={slide.image} alt={'image'} className='h-full w-full object-cover'/> */}
+
+                                    <div className="h-[40vh] text-lightgray bg-darkgray/40 w-full flex justify-center items-center gap-4 px-4 ">
+                                        <div className=' w-1/2'>
+                                            <p className="text-3xl font-bold font-serif">{slide.title}</p>
+                                            <p className="py-2 text-lg">{slide.desc}</p>
+                                        </div>
+                                        <div className="w-1/2 gap-2 flex rounded p-2">
+                                            <p className=" w-full h-40 rounded-lg">
+                                                <Image src={slide.image} alt={'image'} className='h-full w-full object-cover rounded-lg'/>
+                                            </p>
+                                            <p className="w-full h-40 rounded-lg">
+                                                <Image src={slide.image2} alt={'image'} className='h-full w-full object-cover rounded-lg'/>
+                                            </p>
+                                        </div>
+                                    </div>
+                                
+                                </div>
+                            </SwiperSlide>
+                        ))
+                    }
+                </Swiper>
             </div>
 
         </section>
@@ -150,10 +220,12 @@ const HeroHome = () => {
 
         {/* book ticket */}
         <motion.section
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ amount: 0.3 }} 
-            variants={fadeInVariants} 
+
+            // initial="hidden"
+            // whileInView="visible"
+            // viewport={{ amount: 0.3 }} 
+            // variants={fadeInVariants} 
+            {...{ ...fadeIn, transition: { delay: 0.5 } }}
             className=' pt-30'>
 
            <Bookticket/>

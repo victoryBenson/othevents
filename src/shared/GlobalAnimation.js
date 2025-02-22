@@ -1,5 +1,9 @@
-// "use client"
-const isMobile = window.innerWidth < 768; // Animation stop at 768
+let isMobile = false;
+
+if (typeof window !== "undefined") {
+  isMobile = window.innerWidth < 768;
+}
+// const isMobile = window.innerWidth < 768; // Animation stop at 768
 
 const fadeIn = !isMobile
   ? {

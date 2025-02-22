@@ -80,7 +80,7 @@ const data = [
     }
 ]
 
-const heroDisplay = [
+ const heroDisplay = [
     {id: 1, image: hero1},
     {id: 2, image: hero2},
     {id: 3, image: hero3},
