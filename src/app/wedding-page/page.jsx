@@ -26,6 +26,9 @@ import  frame3 from '../../../public/assets/img/h3.png'
 import  frame4 from '../../../public/assets/img/h4.png'
 import  frame5 from '../../../public/assets/img/h5.png'
 import  frame6 from '../../../public/assets/img/h6.png'
+import  hero1 from '../../../public/assets/img/webp1.png'
+import  hero2 from '../../../public/assets/img/webp2.png'
+import  hero3 from '../../../public/assets/img/webp3.png'
 import { fadeInVariants } from '../page';
 import { fadeIn } from '@/shared/GlobalAnimation';
 
@@ -77,6 +80,11 @@ const data = [
     }
 ]
 
+const heroDisplay = [
+    {id: 1, image: hero1},
+    {id: 2, image: hero2},
+    {id: 3, image: hero3},
+]
 const page = () => {
       const [isVisible, setIsVisible] = useState(false);
     
@@ -89,7 +97,7 @@ const page = () => {
   return (
     <>
         {/* hero section */}
-        <section
+        {/* <section
             className='relative h-[90vh] bg-homeBg bg-cover bg-no-repeat bg-center z-50'>
             
             <span className='bg-darkgray/40 absolute inset-0 -z-10'></span>
@@ -112,11 +120,9 @@ const page = () => {
                 </p>
                 <div className='flex space-x-4'>
                     <ButtonLinkOrange href={"#"} name={'Get A Ticket Now'}/>
-                    {/* <ButtonLinkWhite href={"#"} name={'Explore Rentals'}/> */}
                 </div>
             </motion.div>
 
-            {/* scroll top */}
             <div className='absolute rounded-full w-10 h-10 inset-0 right-0 left-0 bg-white hidden'>
                 <ScrollTo
                     to="about"
@@ -127,15 +133,60 @@ const page = () => {
                     duration={800}
                     className="absolute bottom-[ top-40 inset-0  w-auto inline-block -translate-x-1/2 cursor-pointer"
                 >
-                    {/* <AiOutlineDown className=' p-3 rounded-full' /> */}
+                    
                 </ScrollTo>
             </div>
 
-            {/* carousel */}
-            <div className='hidden'>
-                {/* <HeroHomeCarousel/> */}
-            </div>
 
+        </section> */}
+
+        <section>
+            <div className="w-full relative z-50">
+                <motion.div
+                    initial={{ x: "-100%", opacity: 0 }} 
+                    animate={{ x: isVisible ? "0%" : "-100%", opacity: isVisible ? 1 : 0 }}
+                    transition={{ duration: 0.6, ease: "easeOut" }}
+                    className='text-white absolute top-0 z-10 flex justify-center h-full flex-col space-y-10 pl-5 lg:pl-20'
+                    >
+                    <p className='text-2xl sm:text-3xl md:text-5xl font-bold font-serif'>
+                        Experience the Ultimate Wedding <br /> Showcase at Wedding Fair '25
+                    </p>
+                    <p className='text-lg md:text-2xl'>
+                        Join us for an exclusive wedding event featuring top vendors, <br /> bridal fashion, and expert planners. Secure your spot today
+                    </p>
+                    <div className='flex space-x-4'>
+                        <ButtonLinkOrange href={"#"} name={'Get A Ticket Now'}/>
+                    </div>
+                </motion.div>
+                <Swiper
+                modules={[Autoplay, Pagination, Navigation]}
+                slidesPerView={1}
+                spaceBetween={20} 
+                autoplay={{
+                    delay: 3000, 
+                    disableOnInteraction: false,
+                }}
+                pagination={{ clickable: true }} 
+                navigation 
+                loop={true} 
+                className="mySwiper"
+
+
+                >
+                    {
+                        heroDisplay.map((slide, index) => (
+                            <SwiperSlide key={index}>
+                                < div className=" h-[70vh] md:h-[90vh] relative overflow-hidden text-center justify-center items-center flex flex-col">
+                                <span className='bg-linear-to-r bg-darkgray/20 absolute inset-0 z-10'></span>
+                                    
+                                    <Image src={slide.image} alt={'image'} className='h-full w-full object-cover'/>
+                                
+                                </div>
+                            </SwiperSlide>
+                        ))
+                    }
+                </Swiper>
+            </div>
         </section>
 
         <motion.section  
