@@ -7,9 +7,16 @@ import { motion } from 'framer-motion';
 import { Button, ButtonLinkOrange } from '@/shared/ButtonLink'
 import Image from 'next/image'
 import HeroComponent from '@/components/HeroComponent';
-import heroImg from '../../../public/assets/img/pexels-2.webp'
+import heroImg from '../../../public/assets/img/about-us.webp'
 import  planImg from '../../../public/assets/img/about-2.png'
 import aboutImg from '../../../public/assets/img/aboutUs.png'
+
+import icon1 from '../../../public/assets/img/p1.png'
+import icon2 from '../../../public/assets/img/p2.png'
+import icon3 from '../../../public/assets/img/p3.png'
+import icon4 from '../../../public/assets/img/p4.png'
+import icon5 from '../../../public/assets/img/p5.png'
+
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 import "swiper/css/autoplay";
@@ -17,6 +24,7 @@ import "swiper/css/pagination";
 import { Autoplay, Pagination } from "swiper/modules";
 import { TfiQuoteRight, TfiQuoteLeft } from "react-icons/tfi";
 import { fadeInVariants } from '../page'
+import { fadeIn } from '@/shared/GlobalAnimation'
 
 
 export const rentalData = [
@@ -78,6 +86,15 @@ const slides = [
 
 ]
 
+const partners = [
+    {id: 1, icon: icon1},
+    {id: 2, icon: icon2},
+    {id: 3, icon: icon3},
+    {id: 4, icon: icon4},
+    {id: 5, icon: icon5},
+
+]
+
 const page = () => {
   return (
     <>
@@ -86,15 +103,16 @@ const page = () => {
         </section>
 
         <motion.section
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ amount: 0.3 }} 
-            variants={fadeInVariants} 
-         className='px-5 md:px-10 lg:px-20 py-40' id='about'>
+            // initial="hidden"
+            // whileInView="visible"
+            // viewport={{ amount: 0.3 }} 
+            // variants={fadeInVariants} 
+            {...{ ...fadeIn, transition: { delay: 0.5 } }}
+            className='px-5 md:px-10 lg:px-20 py-10 md:py-30' id='about'>
             <div className='flex flex-col lg:flex-row justify-center items-center mx-auto gap-10'>
                 <div className='space-y-4 md:w-1/2'>
-                    <h1 className="text-2xl lg:text-4xl  font-bold mb-4 py-5">Who We Are </h1>
-                    <p className=' sm:text-lg lg:text-2xl leading-8 py-5 ld:text-start text-neutral'>
+                    <h1 className="text-2xl lg:text-4xl  font-bold md:mb-4 md:y-5">Who We Are </h1>
+                    <p className=' sm:text-lg lg:text-2xl leading-8 py-5 text-justify lg:text-start text-neutral'>
                         At PartyWithOTH, we specialize in crafting unforgettable events, handling every detail so you can enjoy the moment. From weddings to corporate functions, our expert team ensures seamless planning and execution.
                     </p>
                 </div>
@@ -107,11 +125,12 @@ const page = () => {
         </motion.section>
 
         <motion.section
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ amount: 0.3 }} 
-            variants={fadeInVariants}  
-        className='px-5 md:px-10 lg:px-20 py-40'>
+            // initial="hidden"
+            // whileInView="visible"
+            // viewport={{ amount: 0.3 }} 
+            // variants={fadeInVariants}  
+
+        className='px-5 md:px-10 lg:px-20 py-10 md:py-30'>
             <div className="w-full">
             <Swiper
             spaceBetween={20} 
@@ -135,14 +154,14 @@ const page = () => {
                 {
                     slides.map((slide, index) => (
                         <SwiperSlide key={index}>
-                            < div className="rounded-lg text-center justify-center items-center border border-gray-100/80 flex flex-col h-80 bg-[#FEF5EE]">
+                            < div className="rounded-lg text-center justify-center items-center border border-gray-100/80 flex flex-col h-80 bg-[#F5E6CA]">
                                 
                                 <p className="text-2xl lg:text-4xl  font-bold mb-4 py-5">
     
                                         {slide.title}
                                 
                                 </p>
-                                <p className="pb-2 md:py-4 text-2xl flex px-20 text-neutral"><TfiQuoteLeft className='text-orange-300'/>{slide.description}<TfiQuoteRight className='text-orange-300'/></p>
+                                <p className="pb-2 md:py-4 sm:text-2xl flex px-5 md:px-20 text-neutral"><TfiQuoteLeft className='text-orange-300'/>{slide.description}<TfiQuoteRight className='text-orange-300'/></p>
                             
                             </div>
                         </SwiperSlide>
@@ -152,17 +171,37 @@ const page = () => {
             </div>
         </motion.section>
 
+        {/* partnership */}
+        <motion.section
+        {...{ ...fadeIn, transition: { delay: 0.5 } }}
+            className='px-5 md:px-10 lg:px-20 py-10 md:py-30'
+        >
+            <div className="text-2xl md:text-4xl font-bold">Our Partner and Collaborators</div>
+            <div className="flex justify-center items-center py-5">
+                {
+                    partners.map(item => {
+                        return (
+                            <span key={item.id}>
+                                <Image src={item.icon} alt='about' className='h-full w-full object-cover rounded-lg'/>
+                            </span>
+                        )
+                    })
+                }
+            </div>
+        </motion.section>
+
         {/* next event */}
         <motion.section
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ amount: 0.3 }} 
-            variants={fadeInVariants} 
-            className=' pt-40 h-full'>
+            // initial="hidden"
+            // whileInView="visible"
+            // viewport={{ amount: 0.3 }} 
+            // variants={fadeInVariants} 
+            {...{ ...fadeIn, transition: { delay: 0.5 } }}
+            className='pt-10 md:pt-30 h-full'>
             {/* <div className='flex h-full items-center'> */}
                 <div className='flex flex-col md:flex-row w-full h-full justify-between'>  
-                    <div className='h-[70vh] w-full md:w-1/2 bg-primary/10 p-5 md:p-10 lg:p-20 flex flex-col justify-center space-y-5'>
-                        <p className='text-4xl font-semibold tracking-widest leading-snug'>Ready to Plan Your Next Event?</p>
+                    <div className='h-[70vh] w-full md:w-1/2 bg-white p-5 md:p-10 lg:p-20 flex flex-col justify-center space-y-5'>
+                        <p className=' text-3xl md:text-4xl font-semibold tracking-widest leading-snug'>Ready to Plan Your Next Event?</p>
                         <p className='text-neutral'>Let’s make it extraordinary. Connect with us today!</p>
                         <ButtonLinkOrange href={`#`} name={'Book a Call'}/>
                     </div>

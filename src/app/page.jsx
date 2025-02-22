@@ -15,6 +15,7 @@ import SplitScreenCarousel from '@/components/OurExpertiseCarousel';
 import contactImg from '../../public/assets/img/contact.png'
 import Bookticket from '@/components/Bookticket';
 import Link from 'next/link';
+import { fadeIn } from '@/shared/GlobalAnimation';
 // import { fadeIn, fadeInLeft } from '@/shared/Animations';
 
 export const fadeInVariants = {
@@ -40,9 +41,10 @@ const HeroHome = () => {
             <span className='bg-linear-to-r bg-darkgray/20 absolute inset-0 -z-10'></span>
 
             <motion.div
-                initial={{ x: "-100%", opacity: 0 }} 
-                animate={{ x: isVisible ? "0%" : "-100%", opacity: isVisible ? 1 : 0 }}
-                transition={{ duration: 0.6, ease: "easeOut" }}
+                // initial={{ x: "-100%", opacity: 0 }} 
+                // animate={{ x: isVisible ? "0%" : "-100%", opacity: isVisible ? 1 : 0 }}
+                // transition={{ duration: 0.6, ease: "easeOut" }}
+                {...{ ...fadeIn, transition: { delay: 0.5 } }}
                 className='text-white flex justify-center  h-full flex-col space-y-10 pl-3 md:pl-5 lg:pl-20'
                 >
                 <p className='text-2xl sm:text-4xl md:text-5xl font-bold font-serif'>
@@ -88,10 +90,12 @@ const HeroHome = () => {
         {/* about us */}
         <motion.section  className='px-5 md:px-10 lg:px-20 py-10 md:py-30' id='about'>
             <motion.div  
-                initial="hidden"
-                whileInView="visible"
-                viewport={{ amount: 0.3 }} 
-                variants={fadeInVariants} 
+                // initial="hidden"
+                // whileInView="visible"
+                // viewport={{ amount: 0.3 }} 
+                // variants={fadeInVariants} 
+
+                {...{ ...fadeIn, transition: { delay: 0.5 } }}
                 className='flex flex-col md:flex-row justify-center items-center mx-auto gap-7 lg:gap-10'>
                 <m.div 
                     
@@ -130,10 +134,12 @@ const HeroHome = () => {
 
         {/* our expertise */}
         <motion.section 
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ amount: 0.3 }} 
-            variants={fadeInVariants} 
+            // initial="hidden"
+            // whileInView="visible"
+            // viewport={{ amount: 0.3 }} 
+            // variants={fadeInVariants} 
+
+            {...{ ...fadeIn, transition: { delay: 0.5 } }}
             className='px-5 md:px-10 lg:px-20 py-10 md:py-30'
             >
             <h1 className="text-2xl lg:text-4xl  font-bold mb-4 py-5">
@@ -156,10 +162,11 @@ const HeroHome = () => {
 
         {/* contact us */}
         <motion.section 
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ amount: 0.3 }} 
-            variants={fadeInVariants} 
+            // initial="hidden"
+            // whileInView="visible"
+            // viewport={{ amount: 0.3 }} 
+            // variants={fadeInVariants} 
+            {...{ ...fadeIn, transition: { delay: 0.5 } }}
             className='h-full md:min-h-[90vh] bg-darkgray overflow-hidden p-5 md:p-10 lg:p-20'>
             <p className=' text-lg sm:text-2xl pb-6 lg:pb-16 text-white md:text-4xl font-bold '>Will You love to reach out to us?</p>
             <div className=' h-full flex flex-col lg:flex-row justify-center items-center mx-auto gap-20 '>

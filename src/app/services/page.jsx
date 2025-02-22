@@ -20,6 +20,7 @@ import rent3Img from '../../../public/assets/img/rent3.png'
 import Bookticket from '@/components/Bookticket';
 import { fadeInVariants } from '../page';
 import Link from 'next/link';
+import { fadeIn, fadeInUp } from '@/shared/GlobalAnimation';
 
 
 
@@ -106,28 +107,28 @@ export const rentalData = [
         image: rent1Img,
         title: "Crockeries",
         price: '20,303',
-        btnText: 'rent now'
+        btnText: 'rentals'
     },
     {
         id: 2,
         image: rent2Img,
         title: "Sashes",
         price: '20,039',
-        btnText: 'rent now'
+        btnText: 'rentals'
     },
     {
         id: 3,
         image: rent3Img,
         title: 'Magazine Photo booth',
         price: '400,303',
-        btnText: 'rent now'
+        btnText: 'rentals'
     }
 ]
 
 const Service = () => {
     const [selectedCard, setSelectedCard] = useState(null);
     const [openModal, setOpenModal] = useState(false)
-    console.log(selectedCard)
+    // console.log(selectedCard)
 
     const handleModal = (card) => {
         setSelectedCard(card);
@@ -139,7 +140,7 @@ const Service = () => {
         setOpenModal(false);
     };
 
-    console.log(selectedCard  +"ddd")
+    // console.log(selectedCard  +"ddd")
   return (
     <div className='min-h-screen'>
        <section >
@@ -161,10 +162,11 @@ const Service = () => {
        </section>
 
        <motion.section 
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ amount: 0.3 }} 
-            variants={fadeInVariants}  
+            // initial="hidden"
+            // whileInView="visible"
+            // viewport={{ amount: 0.3 }} 
+            // variants={fadeInVariants} 
+            {...{ ...fadeIn, transition: { delay: 0.5 } }} 
             className='px-5 md:px-10 lg:px-20 py-10 md:py-30' id='about'>
             <div className='flex flex-col md:flex-row justify-center items-center mx-auto gap-10'>
                 <div className='space-y-4 md:w-1/2'>
@@ -181,10 +183,11 @@ const Service = () => {
         </motion.section>
 
         <motion.section 
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ amount: 0.3 }} 
-            variants={fadeInVariants} 
+            // initial="hidden"
+            // whileInView="visible"
+            // viewport={{ amount: 0.3 }} 
+            // variants={fadeInVariants} 
+            {...{ ...fadeIn, transition: { delay: 0.5 } }}
             id='services' 
             className='px-5 md:px-10 lg:px-20 py-10 md:py-30 '>
             <h1 className="text-2xl lg:text-4xl font-bold mb-4 py-5">Our Event Management Services  </h1>
@@ -249,13 +252,15 @@ const Service = () => {
 
             {/* rental */}
         <motion.section
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ amount: 0.3 }} 
-            variants={fadeInVariants} 
+            // initial="hidden"
+            // whileInView="visible"
+            // viewport={{ amount: 0.3 }} 
+            // variants={fadeInVariants} 
+            {...{ ...fadeIn, transition: { delay: 0.5 } }}
+
             id='rentals'className='px-5 md:px-10 lg:px-20 py-10 md:py-30'>
             <h1 className="text-2xl lg:text-4xl  font-bold mb-4 py-5">Rentals  </h1>
-            <div className='grid grid-cols-2 lg:grid-cols-3 gap-8'>
+            <div className='grid grid-cols-2 lg:grid-cols-3 gap-2 md:gap-8'>
                 {
                     rentalData.map((item) => {
                         return (
@@ -288,11 +293,12 @@ const Service = () => {
 
         {/* next event */}
         <motion.section 
-        initial="hidden"
-                    whileInView="visible"
-                    viewport={{ amount: 0.3 }} 
-                    variants={fadeInVariants} 
-         className='pt-10 md:pt-30 h-full'>
+            // initial="hidden"
+            // whileInView="visible"
+            // viewport={{ amount: 0.3 }} 
+            // variants={fadeInVariants} 
+            {...{ ...fadeIn, transition: { delay: 0.5 } }}
+            className='pt-10 md:pt-30 h-full'>
             {/* <div className='flex h-full items-center'> */}
                 <div className='flex flex-col md:flex-row w-full h-full justify-between'>  
                     <div className='h-[70vh] w-full md:w-1/2 bg-primary/10 p-5 md:p-10 lg:p-20 flex flex-col justify-center space-y-5'>
@@ -302,7 +308,7 @@ const Service = () => {
                     </div>
 
                     <div className='px-5 md:px-10 lg:px-20 flex justify-center items-center w-full md:w-1/2 h-[70vh] relative'>
-                        {/* <span className='absolute inset-0 bg-darkgray/30 -z-10'></span> */} heelorkrrk-0gr00
+                        {/* <span className='absolute inset-0 bg-darkgray/30 -z-10'></span> */}
                         <Image src={planImg} alt="ticket" width={500} height={500} className=" w-full h-full object-cover absolute inset-0"/>
                     </div>
                 </div>

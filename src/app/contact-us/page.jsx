@@ -7,12 +7,13 @@ import { motion } from 'framer-motion';
 import { Button, ButtonLinkOrange, ButtonLinkWhite } from '@/shared/ButtonLink'
 import Image from 'next/image'
 import HeroComponent from '@/components/HeroComponent';
-import heroImg from '../../../public/assets/img/pexel1.webp'
+import heroImg from '../../../public/assets/img/contact-us.webp'
 import  planImg from '../../../public/assets/img/about-2.png'
 import "swiper/css";
 import "swiper/css/autoplay";
 import "swiper/css/pagination";
 import { fadeInVariants } from '../page'
+import { fadeIn } from '@/shared/GlobalAnimation'
 
 
 
@@ -83,18 +84,21 @@ const page = () => {
         </section>
             
         {/* contact us */}
-        <motion.section initial="hidden"
-            whileInView="visible"
-            viewport={{ amount: 0.3 }} 
-            variants={fadeInVariants}  className=' mt-10 lg:mt-40  h-full md:min-h-[90vh] overflow-hidden p-5 md:p-10 lg:p-20'>
-            <div className=' h-full flex flex-col lg:flex-row justify-center items-center mx-auto gap-20 '>
+        <motion.section 
+            // initial="hidden"
+            // whileInView="visible"
+            // viewport={{ amount: 0.3 }} 
+            // variants={fadeInVariants} 
+            {...{ ...fadeIn, transition: { delay: 0.5 } }} 
+            className=' px-5 md:px-10 lg:px-20 py-10 md:py-40 h-full md:min-h-[90vh] overflow-hidden'>
+            <div className=' h-full flex flex-col md:flex-row justify-center  mx-auto gap-20 '>
                 <div className='md:w-1/2 '>
-                    <p className='text-2xl lg:pb-16 md:text-4xl font-bold '>Get in Touch with PartyWithOTH</p>
+                    <p className='text-2xl lg:pb-16 md:text-4xl font-bold py-3 md:font-bold '>Get in Touch with PartyWithOTH</p>
                     <p className='text-neutral text-lg'>We’d love to hear from you. Whether you have questions, need event planning assistance, or want to book rentals, we’re here to help</p>
                 </div>
 
                 <div className='space-y-4 w-full md:w-1/2 '>
-                    <p className='text-white text-lg md:text-2xl'>Tell us what you have in mind</p>
+                    <p className='tex3t-lg md:text-2xl'>Tell us what you have in mind</p>
                     <form className='space-y-5'>
                         <div>
                             <label htmlFor=""></label>
@@ -117,16 +121,16 @@ const page = () => {
         </motion.section>
 
         {/* next event */}
-        <motion.section className='pt-40 h-full'>
+        <motion.section className='pt-10 md:pt-30 h-full'>
             {/* <div className='flex h-full items-center'> */}
                 <div className='flex flex-col md:flex-row w-full h-full justify-between'>  
-                    <div className='h-[70vh] w-full md:w-1/2 bg-primary/10 p-5 md:p-10 lg:p-20 flex flex-col justify-center space-y-5'>
-                        <p className='text-4xl font-semibold tracking-widest leading-snug'>Ready to Plan Your Next Event?</p>
+                    <div className='h-[50vh] md:h-[70vh] w-full md:w-1/2 bg-primary/10 p-5 md:p-10 lg:p-20 flex flex-col justify-center space-y-5'>
+                        <p className=' text-3xl md:text-4xl font-semibold tracking-widest leading-snug'>Ready to Plan Your Next Event?</p>
                         <p className='text-neutral'>Let’s make it extraordinary. Connect with us today!</p>
                         <ButtonLinkOrange href={`#`} name={'Book a Call'}/>
                     </div>
 
-                    <div className='px-5 md:px-10 lg:px-20 flex justify-center items-center w-full md:w-1/2 h-[70vh] relative'>
+                    <div className='px-5 md:px-10 lg:px-20 flex justify-center items-center w-full md:w-1/2 h-[50vh] md:h-[70vh] relative order-first md:order-last'>
                         {/* <span className='absolute inset-0 bg-darkgray/30 -z-10'></span> */} 
                         <Image src={planImg} alt="ticket" width={500} height={500} className=" w-full h-full object-cover absolute inset-0"/>
                     </div>

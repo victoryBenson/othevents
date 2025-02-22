@@ -16,6 +16,9 @@ import { TfiQuoteRight, TfiQuoteLeft } from "react-icons/tfi";
 import  display1 from '../../../public/assets/img/exp1.png'
 import  display2 from '../../../public/assets/img/exp2.png'
 import  display3 from '../../../public/assets/img/exp3.png'
+import  display4 from '../../../public/assets/img/exp4.png'
+import  display5 from '../../../public/assets/img/exp5.png'
+import  display6 from '../../../public/assets/img/exp6.png'
 import { CiCalendar } from 'react-icons/ci';
 import  frame1 from '../../../public/assets/img/h1.png'
 import  frame2 from '../../../public/assets/img/h2.png'
@@ -24,6 +27,7 @@ import  frame4 from '../../../public/assets/img/h4.png'
 import  frame5 from '../../../public/assets/img/h5.png'
 import  frame6 from '../../../public/assets/img/h6.png'
 import { fadeInVariants } from '../page';
+import { fadeIn } from '@/shared/GlobalAnimation';
 
 
 const slides = [
@@ -44,13 +48,18 @@ const slides = [
     },
     {
         id: 4,
-        image: display2,
-        text: 'Games and Contest  '
+        image: display4,
+        text: 'Celebrity Quest Appearance  '
     },
     {
         id: 5,
-        image: display1,
-        text: 'Contest  '
+        image: display5,
+        text: 'Prized Games and Contest  '
+    },
+    {
+        id: 6,
+        image: display6,
+        text: 'Traditional Props Photo Booth  '
     }
 ]
 
@@ -83,7 +92,7 @@ const page = () => {
         <section
             className='relative h-[90vh] bg-homeBg bg-cover bg-no-repeat bg-center z-50'>
             
-            <span className='bg-darkgray/20 absolute inset-0 -z-10'></span>
+            <span className='bg-darkgray/40 absolute inset-0 -z-10'></span>
 
             <span className='absolute inset-0 -z-20'>
                 <Image src={aboutImg} alt={'hero-image'} className='h-full w-full object-cover'/>
@@ -130,12 +139,13 @@ const page = () => {
         </section>
 
         <motion.section  
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ amount: 0.3 }} 
-            variants={fadeInVariants}  
-            className='px-5 md:px-10 lg:px-20 py-40' id='about'>
-            <div className='flex flex-col lg:flex-row justify-center items-center mx-auto gap-10'>
+            // initial="hidden"
+            // whileInView="visible"
+            // viewport={{ amount: 0.3 }} 
+            // variants={fadeInVariants}
+            {...{ ...fadeIn, transition: { delay: 0.5 } }}   
+            className='px-5 md:px-10 lg:px-20 py-10 md:py-30' id='about'>
+            <div className='flex flex-col md:flex-row justify-center mx-auto gap-10'>
                 <div className='space-y-4 md:w-1/2'>
                     <h1 className="text-2xl lg:text-4xl  font-bold mb-4 py-5">What's this About</h1>
                     <p className=' sm:text-lg lg:text-2xl leading-8 py-5 ld:text-start text-neutral'>
@@ -150,17 +160,23 @@ const page = () => {
             </div>
         </motion.section>
 
-        <motion.section initial="hidden"
-            whileInView="visible"
-            viewport={{ amount: 0.3 }} 
-            variants={fadeInVariants}  id='video' className='px-5 md:px-10 lg:px-20 py-40'>
+        <motion.section 
+            // initial="hidden"
+            // whileInView="visible"
+            // viewport={{ amount: 0.3 }} 
+            // variants={fadeInVariants}  
+            {...{ ...fadeIn, transition: { delay: 0.5 } }} 
+            id='video' className='px-5 md:px-10 lg:px-20 py-10 md:py-30'>
             <Image src={thumbnail} alt={'video-image'} className='h-full w-full object-cover'/>
         </motion.section>
 
-        <motion.section initial="hidden"
-            whileInView="visible"
-            viewport={{ amount: 0.3 }} 
-            variants={fadeInVariants}  className='px-5 md:px-10 lg:px-20 py-40'>
+        <motion.section 
+            // initial="hidden"
+            // whileInView="visible"
+            // viewport={{ amount: 0.3 }} 
+            // variants={fadeInVariants} 
+            {...{ ...fadeIn, transition: { delay: 0.5 } }}  
+            className='px-5 md:px-10 lg:px-20 py-10 md:py-30'>
             <h1 className="text-2xl lg:text-4xl  font-bold mb-4 py-5">What to Expect? </h1>
             <div className="w-full">
             <Swiper
@@ -185,14 +201,14 @@ const page = () => {
                 {
                     slides.map((slide, index) => (
                         <SwiperSlide key={index}>
-                            < div className="rounded-lg text-center justify-center items-center border border-gray-100/80 flex flex-col">
+                            < div className=" h-[60vh overflow-hidden rounded-lg text-center justify-center items-center border border-gray-100/80 flex flex-col">
                                 
-                                <p className="text-2xl lg:text-4xl  font-bold mb-4 py-5">
-    
-                                <Image src={slide.image} alt={'image'} className='h-full w-full object-cover'/>
+                                <p className="text-2xl lg:text-4xl font-bold h-[35vh] md:h-[50vh] w-full overflow-hidden rounded-lg">
+                                
+                                <Image src={slide.image} alt={'image'} className='h-full w-full object-cover rounded-lg'/>
                                 
                                 </p>
-                                <p className="pb-2 md:py-4 text-base md:text-2xl flex  text-neutral">{slide.text}</p>
+                                <p className=" py-4 text-base md:text-xl flex  text-neutral h-[10vh]">{slide.text}</p>
                             
                             </div>
                         </SwiperSlide>
@@ -202,20 +218,24 @@ const page = () => {
             </div>
         </motion.section>
 
-        <motion.section initial="hidden"
-            whileInView="visible"
-            viewport={{ amount: 0.3 }} 
-            variants={fadeInVariants} >
+        <motion.section 
+            // initial="hidden"
+            // whileInView="visible"
+            // viewport={{ amount: 0.3 }} 
+            // variants={fadeInVariants} 
+
+            {...{ ...fadeIn, transition: { delay: 0.5 } }}  
+            >
             <div className='flex h-full md:h-[90vh] items-center'>
                 {
                     data.map((item) => (
                         <div key={item.id} className='flex flex-col md:flex-row w-full h-full justify-between'>
-                            <div className='px-5 md:px-10 lg:px-20 flex justify-center items-center h-full w-full md:w-1/2 relative z-50'>
+                            <div className=' px-5 md:px-10 lg:px-20 flex justify-center items-center h-[40vh] md:h-full w-full md:w-1/2 relative z-50'>
                                 <span className='absolute inset-0 bg-darkgray/30 -z-10'></span>
                                     <Image src={item.image} alt="ticket" width={500} height={500} className="rounded w-full h-full object-cover absolute inset-0 -z-20"/>
                                 <p className='text-2xl md:text-[3rem] font-bold text-white py-10'>The Wedding Fair ‘25</p>
                             </div>
-                            <div className='w-full md:w-1/2 bg-primary/10 p-5 md:p-10 lg:p-20 flex flex-col justify-center space-y-5'>
+                            <div className='w-full md:w-1/2 bg-[#F5E6CA] p-5 md:p-10 lg:p-20 flex flex-col justify-center space-y-5'>
                                 <p className='text-4xl font-semibold tracking-widest leading-snug'>{item.title}</p>
                                 <p className="text-neutral">{item.description}</p>
                                 <div className='flex text-darkgray/70 text-sm gap-2'>
@@ -237,11 +257,12 @@ const page = () => {
         {/*  */}
         {/* about us */}
         <motion.section
-        initial="hidden"
-        whileInView="visible"
-        viewport={{ amount: 0.3 }} 
-        variants={fadeInVariants} 
-         className='px-5 md:px-10 lg:px-20 py-40 bg-lightgray' id='about'>
+        // initial="hidden"
+        // whileInView="visible"
+        // viewport={{ amount: 0.3 }} 
+        // variants={fadeInVariants}
+        {...{ ...fadeIn, transition: { delay: 0.5 } }}   
+         className='px-5 md:px-10 lg:px-20 py-10 md:py-30 bg-lightgray' id=''>
             <div className='flex flex-col lg:flex-row justify-center items-center mx-auto gap-10'>
                 <div className='space-y-4 md:w-1/2'>
                 <h1 className="text-2xl lg:text-4xl  font-bold mb-4 py-5">The Wedding Fair '24 Highlights </h1>
