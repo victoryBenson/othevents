@@ -8,6 +8,7 @@ import React, { useState } from 'react'
 import {motion} from 'framer-motion'
 import { HiMiniBars3BottomRight } from "react-icons/hi2";
 import { TfiClose } from "react-icons/tfi";
+import CalendlyPopup from './CalendlyEmbed'
 
 const Header = () => {
     const [hoveredIndex, setHoveredIndex] = useState(null); // For hover effect
@@ -98,7 +99,8 @@ const Header = () => {
         </div>
 
         <div className='hidden md:flex '>
-            <Link href={'#'} className='bg-primary text-white p-3 px-8 font-semibold rounded'>Book a call</Link>
+            {/* <Link href={'#'} className='bg-primary text-white p-3 px-8 font-semibold rounded'>Book a call</Link> */}
+            <CalendlyPopup title="Book a Call"/>
         </div>
 
         {/* mobile view */}
@@ -133,9 +135,10 @@ const Header = () => {
                             <li>
                                 <Link href={'/wedding-page'} onClick={handleMobileHeader} >Wedding Fair '25</Link>
                             </li>
-                            <li>
+                            {/* <li>
                                 <Link href={'#'} className='bg-primary text-white p-3 rounded' onClick={handleMobileHeader} >Book a call</Link>
-                            </li>
+                            </li> */}
+                            <CalendlyPopup title="Book a Call"/>
                         </ul>
                     </motion.div>
                 )

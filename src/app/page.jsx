@@ -24,6 +24,8 @@ import { Autoplay, Pagination, Navigation } from "swiper/modules";
 import  hero1 from '../../public/assets/img/webp1.png'
 import  hero2 from '../../public/assets/img/webp2.png'
 import  hero3 from '../../public/assets/img/webp3.png'
+import CalendlyEmbed from '@/components/CalendlyEmbed';
+import CalendlyPopup from '@/components/CalendlyEmbed';
 
 export const fadeInVariants = {
   hidden: { opacity: 0, y: 50 },
@@ -79,13 +81,15 @@ const HeroHome = () => {
                 Make Every Event Unforgettable, <br className="hidden md:flex"/> with PartyWithOTH!
                 </p>
                 <p className='sm:text-2xl'>From elegant weddings to corporate galas, <br/> we bring your vision to life.</p>
-                <div className='flex gap-4'>
+                <div className='flex items-center gap-4'>
                     <motion.div className='' whileHover={{ scale: 1.05 }} transition={{duration: 0.5}}>
-                        <Link href={'#'} className='bg-primary text-white py-4 px-6 md:px-8 font-semibold rounded'>Book a call</Link>
+                        {/* <Link href={'#'} className='bg-primary text-white py-4 px-6 md:px-8 font-semibold rounded'>Book a call</Link> */}
+                        <CalendlyPopup title="Book a Call"/>
                     </motion.div>
                     <motion.div className=''  whileHover={{ scale: 1.05 }} transition={{duration: 0.5}}>
                         <Link href={'rentals'} className='bg-white text-primary py-4 px-6 md:px-8 font-semibold rounded'>Explore Rentals</Link>
                     </motion.div>
+                    
                     {/* <ButtonLinkOrange href={"#"} name={'Book A Call'}/>
                     <ButtonLinkWhite href={"#"} name={'Explore Rentals'}/> */}
                 </div>

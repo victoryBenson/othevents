@@ -16,6 +16,7 @@ import  planImg from '../../../public/assets/img/planNextEvent.png'
 import { fadeInVariants } from '../page'
 import { fadeIn } from '@/shared/GlobalAnimation'
 import Link from 'next/link'
+import CalendlyPopup from '@/components/CalendlyEmbed'
 
 export const rentalData = [
     {
@@ -23,42 +24,42 @@ export const rentalData = [
         image: rent1Img,
         title: "Crockeries",
         price: '20,303',
-        btnText: 'rent now'
+        btnText: '#'
     },
     {
         id: 2,
         image: rent5Img,
         title: "Sashes",
         price: '20,039',
-        btnText: 'rent now'
+        btnText: '#'
     },
     {
         id: 3,
         image: rent3Img,
         title: 'Magazine Photo booth',
         price: '400,303',
-        btnText: 'rent now'
+        btnText: '#'
     },
     {
         id: 4,
         image: rent4Img,
         title: 'Magazine Photo booth',
         price: '400,303',
-        btnText: 'rent now'
+        btnText: '#'
     },
     {
         id: 5,
         image: rent2Img,
         title: 'Magazine Photo booth',
         price: '400,303',
-        btnText: 'rent now'
+        btnText: '#'
     },
     {
         id: 6,
         image: rent6Img,
         title: 'Magazine Photo booth',
         price: '400,303',
-        btnText: 'rent now'
+        btnText: '#'
     }
 ]
 
@@ -120,7 +121,8 @@ const page = () => {
                     <div className='h-[70vh] w-full md:w-1/2 bg-primary/10 p-5 md:p-10 lg:p-20 flex flex-col justify-center space-y-5'>
                         <p className='text-4xl font-semibold tracking-widest leading-snug'>Ready to Plan Your Next Event?</p>
                         <p className='text-neutral'>Let’s make it extraordinary. Connect with us today!</p>
-                        <ButtonLinkOrange href={`#`} name={'Book a Call'}/>
+                        {/* <ButtonLinkOrange href={`#`} name={'Book a Call'}/> */}
+                        <CalendlyPopup title="Book a Call"/>
                     </div>
 
                     <div className='px-5 md:px-10 lg:px-20 flex justify-center items-center w-full md:w-1/2 h-[70vh] relative order-first md:order-last'>

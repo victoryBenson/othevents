@@ -14,6 +14,7 @@ import "swiper/css/autoplay";
 import "swiper/css/pagination";
 import { fadeInVariants } from '../page'
 import { fadeIn } from '@/shared/GlobalAnimation'
+import CalendlyPopup from '@/components/CalendlyEmbed'
 
 
 
@@ -127,7 +128,8 @@ const page = () => {
                     <div className='h-[50vh] md:h-[70vh] w-full md:w-1/2 bg-primary/10 p-5 md:p-10 lg:p-20 flex flex-col justify-center space-y-5'>
                         <p className=' text-3xl md:text-4xl font-semibold tracking-widest leading-snug'>Ready to Plan Your Next Event?</p>
                         <p className='text-neutral'>Let’s make it extraordinary. Connect with us today!</p>
-                        <ButtonLinkOrange href={`#`} name={'Book a Call'}/>
+                        {/* <ButtonLinkOrange href={`#`} name={'Book a Call'}/> */}
+                        <CalendlyPopup title="Book a Call"/>
                     </div>
 
                     <div className='px-5 md:px-10 lg:px-20 flex justify-center items-center w-full md:w-1/2 h-[50vh] md:h-[70vh] relative order-first md:order-last'>
