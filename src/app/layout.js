@@ -13,11 +13,6 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      {/* <Script
-        src="https://assets.calendly.com/assets/external/widget.js"
-        strategy="beforeInteractive"
-      /> */}
-         {/* <script src="https://assets.calendly.com/assets/external/widget.js" async></script> */}
       <body
         className={`bg-[#FAF9F6]`}
       >

@@ -155,7 +155,7 @@ const page = () => {
                 {
                     slides.map((slide, index) => (
                         <SwiperSlide key={index}>
-                            < div className="rounded-lg text-center justify-center items-center border border-gray-100/80 flex flex-col h-80 bg-[#F5E6CA]">
+                            < div className="rounded-lg text-center justify-center items-center flex flex-col h-80 bg-[#F5E6CA]">
                                 
                                 <p className="text-2xl lg:text-4xl  font-bold mb-4 py-5">
     
@@ -177,12 +177,12 @@ const page = () => {
         {...{ ...fadeIn, transition: { delay: 0.5 } }}
             className='px-5 md:px-10 lg:px-20 py-10 md:py-30'
         >
-            <div className="text-2xl md:text-4xl font-bold">Our Partner and Collaborators</div>
-            <div className="flex justify-center items-center py-5">
+            <div className="text-xl md:text-4xl font-bold">Our Partner and Collaborators</div>
+            <div className="flex justify-start items-center py-5 md:gap-8">
                 {
                     partners.map(item => {
                         return (
-                            <span key={item.id}>
+                            <span key={item.id} className=" md:w-[150px] pt-5">
                                 <Image src={item.icon} alt='about' className='h-full w-full object-cover rounded-lg'/>
                             </span>
                         )

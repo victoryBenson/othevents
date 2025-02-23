@@ -39,12 +39,21 @@ html {
   /* color: white; */
 }
 
-.swiper-pagination-bullet {
-  background-color: #c4c4c4; /* Default bullet color */
-  opacity: 1; /* Ensure it's fully visible */
+
+.swiper-pagination {
+  margin-top: 20px; /* Adjust as needed */
 }
 
-/* Change active bullet color */
+/* Change pagination dot color */
+.swiper-pagination-bullet {
+  background-color: #ff5722 !important; /* Custom color */
+  width: 12px;
+  height: 12px;
+  opacity: 0.5;
+}
+
+/* Active dot styling */
 .swiper-pagination-bullet-active {
-  background-color: #7c1b77; /* Active bullet color */
+  background-color: #ff9800 !important; /* Highlight color */
+  opacity: 1;
 }

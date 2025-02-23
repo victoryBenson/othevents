@@ -37,14 +37,14 @@ const Header = () => {
             name: 'Contact Us',
             path: '/contact-us'
         },{
-            name: "Wedding Fair '25",
+            name: "The Wedding Fair '25",
             path: '/wedding-page'
         }
     ]
 
   return (
     <div className='flex justify-between items-center h-20 w-full bg-darkgray text-white px-5 md:px-20 mx-auto'>
-        <div className='h-16 w-16 flex items-center'>
+        <div className='h-16 w-28 flex items-center'>
             <Link href={'/'} >
                 <Logo />
             </Link>

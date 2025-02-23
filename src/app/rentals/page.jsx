@@ -29,28 +29,28 @@ export const rentalData = [
     {
         id: 2,
         image: rent5Img,
-        title: "Sashes",
+        title: "Foam Sticks",
         price: '20,039',
         btnText: '#'
     },
     {
         id: 3,
         image: rent3Img,
-        title: 'Magazine Photo booth',
+        title: 'Sashes',
         price: '400,303',
         btnText: '#'
     },
     {
         id: 4,
         image: rent4Img,
-        title: 'Magazine Photo booth',
+        title: 'After Party Props',
         price: '400,303',
         btnText: '#'
     },
     {
         id: 5,
         image: rent2Img,
-        title: 'Magazine Photo booth',
+        title: 'Gold Chiavari Chair',
         price: '400,303',
         btnText: '#'
     },
@@ -113,7 +113,11 @@ const page = () => {
                     })
                 }
             </div>
+            <div className="text-center pt-10 font-semibold">
+                <Link href ="/rentals" className="text-primary text-xl">Load More</Link>
+            </div>
         </motion.section>
+
         {/* next event */}
         <motion.section {...{ ...fadeIn, transition: { delay: 0.5 } }}  className='pt-10 md:pt-30 h-full'>
             {/* <div className='flex h-full items-center'> */}

@@ -35,8 +35,8 @@ const Bookticket = () => {
                                 <span>{item.endDate}</span>
                             </div>
                             <p className='text-xl md:text-2xl lg:text-4xl font-semibold tracking-widest leading-snug'>{item.description}</p>
-                            <div className='flex items-center gap-4 justify-around py-5'>
-                                <p className="flex items-center"><LuPoundSterling />{item.amount}</p>
+                            <div className='flex items-center gap-4 justify-between py-5'>
+                                <p className="flex items-center text-base font-bold "><LuPoundSterling />{item.amount}</p>
                                 <ButtonLinkOrange href={`${item.link}`} name={'Book a ticket'}/>
                             </div>
                         </div>

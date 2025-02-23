@@ -13,9 +13,9 @@ import "swiper/css/pagination";
 import { Autoplay, Pagination, Navigation } from "swiper/modules";
 import { FaMapLocationDot } from "react-icons/fa6";
 import { TfiQuoteRight, TfiQuoteLeft } from "react-icons/tfi";
-import  display1 from '../../../public/assets/img/exp1.png'
-import  display2 from '../../../public/assets/img/exp2.png'
-import  display3 from '../../../public/assets/img/exp3.png'
+import  display1 from '../../../public/assets/img/local-cuisiness.png'
+import  display2 from '../../../public/assets/img/after-party-banger.png'
+import  display3 from '../../../public/assets/img/red-carpet.png'
 import  display4 from '../../../public/assets/img/exp4.png'
 import  display5 from '../../../public/assets/img/exp5.png'
 import  display6 from '../../../public/assets/img/exp6.png'
@@ -31,23 +31,26 @@ import  hero2 from '../../../public/assets/img/webp2.png'
 import  hero3 from '../../../public/assets/img/webp3.png'
 import { fadeInVariants } from '../page';
 import { fadeIn } from '@/shared/GlobalAnimation';
-
+import { FaPoundSign } from "react-icons/fa";
+import  timeIcon from '../../../public/assets/img/time-icon.png'
+import  mapIcon from '../../../public/assets/img/map-icon.png'
+import  calendarIcon from '../../../public/assets/img/calendar-icon.png'
 
 const slides = [
     {
         id: 1,
         image: display1,
-        text: 'Celebrity guest appearance'
+        text: 'Local/International Cuisines'
     },
     {
         id: 2,
         image: display2,
-        text: 'Traditional Props Photo Booth '
+        text: 'After Party (The Banger)'
     },
     {
         id: 3,
         image: display3,
-        text: 'Prized Games and Contest  '
+        text: 'Red Carpet '
     },
     {
         id: 4,
@@ -71,9 +74,9 @@ const data = [
         id: 1,
         name: 'The Wedding Fair 2025',
         image: '/assets/img/wedpix.png',
-        amount: '$150',
+        amount: '150',
         title: 'Event Details',
-        description: "in us for an exclusive wedding event featuring top vendors, bridal fashion, and expert planners. Secure your spot today!",
+        description: "In us for an exclusive wedding event featuring top vendors, bridal fashion, and expert planners. Secure your spot today!",
         link: '#',
         startDate: '20-01-2025',
         endDate: '28-02-2025'
@@ -198,7 +201,7 @@ const page = () => {
             className='px-5 md:px-10 lg:px-20 py-10 md:py-30' id='about'>
             <div className='flex flex-col md:flex-row justify-center mx-auto gap-10'>
                 <div className='space-y-4 md:w-1/2'>
-                    <h1 className="text-2xl lg:text-4xl  font-bold mb-4 py-5">What's this About</h1>
+                    <h1 className="text-2xl lg:text-4xl  font-bold mb-4 py-5 font-serif">What's this About</h1>
                     <p className=' sm:text-lg lg:text-2xl leading-8 py-5 ld:text-start text-neutral'>
                     PartyWithOTH is a premier event management and rental service dedicated to turning your special moments into extraordinary experiences. With a passion for creativity and attention to detail, we bring visions to life—whether it’s an elegant wedding, a corporate gathering, or a lively celebration
                     </p>
@@ -237,14 +240,14 @@ const page = () => {
                 640: { slidesPerView: 1 }, 
                 1024: { slidesPerView: 3 },
                 }}
-               spaceBetween={20} // Space between cards
+               spaceBetween={20} 
                autoplay={{
-                 delay: 3000, // Autoplay interval (3 seconds)
-                 disableOnInteraction: false, // Keep autoplay after user interaction
+                 delay: 3000, 
+                 disableOnInteraction: false,
                }}
-               pagination={{ clickable: true }} // Dots navigation
-               navigation // Arrows navigation
-               loop={true} // Infinite loop
+               pagination={{ clickable: true }} 
+               navigation 
+               loop={true} 
                className="mySwiper"
 
 
@@ -259,7 +262,7 @@ const page = () => {
                                 <Image src={slide.image} alt={'image'} className='h-full w-full object-cover rounded-lg'/>
                                 
                                 </p>
-                                <p className=" py-4 text-base md:text-xl flex  text-neutral h-[10vh]">{slide.text}</p>
+                                <p className=" py-4 text-base md:text-xl flex font-semibold text-neutral h-[10vh]">{slide.text}</p>
                             
                             </div>
                         </SwiperSlide>
@@ -288,14 +291,28 @@ const page = () => {
                             </div>
                             <div className='w-full md:w-1/2 bg-[#F5E6CA] p-5 md:p-10 lg:p-20 flex flex-col justify-center space-y-5'>
                                 <p className='text-4xl font-semibold tracking-widest leading-snug'>{item.title}</p>
-                                <p className="text-neutral">{item.description}</p>
-                                <div className='flex text-darkgray/70 text-sm gap-2'>
-                                    <span className='flex items-center '><CiCalendar className='text-primary '/>{item.startDate}</span>-
-                                    <span>{item.endDate}</span>
+                                <p className="text-neutral text-lg">{item.description}</p>
+                                <div className='flex text-darkgray/70 text-base gap-2'>
+                                    <span className='flex items-center gap-1'>
+                                        {/* <CiCalendar className='text-primary '/> */}
+                                        <Image src={calendarIcon} alt="ticket" width={500} height={500} className="rounded w-6 h-6 ml-2"/>
+                                        March 19, 2025
+                                    </span>
+                                    <span className='flex items-center gap-1'>
+                                        {/* <CiCalendar className='text-primary '/> */}
+                                        <Image src={timeIcon} alt="ticket" width={500} height={500} className="rounded w-6 h-6 ml-2"/>
+                                        8:00 am - 5:00pm
+                                    </span>
+                
                                 </div>
-                                <span className="text-neutral flex items-center"> <FaMapLocationDot className="text-primary"/>To be disclose</span>
-                                <div className='flex items-center gap-4 justify-around py-5'>
-                                    <p>{item.amount}</p>
+                                <span className='flex items-center gap-1 text-darkgray/70 text-base'>
+                                    
+                                    <Image src={mapIcon} alt="ticket" width={500} height={500} className="rounded w-6 h-6 ml-2"/>
+                                    To be disclose
+                                </span>
+            
+                                <div className='flex items-center gap-4 justify-between py-5'>
+                                    <p className='flex items-center'><FaPoundSign />{item.amount}</p>
                                     <ButtonLinkOrange href={`${item.link}`} name={'Get a ticket'}/>
                                 </div>
                             </div>

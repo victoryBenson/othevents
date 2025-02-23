@@ -111,19 +111,20 @@ export const rentalData = [
         btnText: 'rentals'
     },
     {
-        id: 2,
-        image: rent2Img,
-        title: "Sashes",
-        price: '20,039',
+        id: 3,
+        image: rent3Img,
+        title: 'Sashes',
+        price: '400,303',
         btnText: 'rentals'
     },
     {
-        id: 3,
-        image: rent3Img,
-        title: 'Magazine Photo booth',
-        price: '400,303',
+        id: 2,
+        image: rent2Img,
+        title: "Magazine Photo booth",
+        price: '20,039',
         btnText: 'rentals'
-    }
+    },
+   
 ]
 
 const Service = () => {
@@ -276,7 +277,7 @@ const Service = () => {
                                 <div className='h-full px-3 w-full'>
                                     <h2 className='text-lg font-semibold py-2'>{item.title}</h2>
                                     <div className='py-3 rounded flex justify-center items-center text-center border border-primary w-full'>
-                                        <Link href={item.btnText} className='text-primary rounded h-full w-full'>Learn More</Link>
+                                        <Link href={item.btnText} className='text-primary rounded h-full w-full'>Rent Now</Link>
                                     </div>
                                     <div className='flex justify-between items-center '>
                                         {/* <p className='text-neutral'>${item.price}</p> */}
@@ -290,6 +291,9 @@ const Service = () => {
                         )
                     })
                 }
+            </div>
+            <div className="text-center pt-10 font-semibold">
+                <Link href ="/rentals" className="text-primary">View More</Link>
             </div>
         </motion.section>
 
