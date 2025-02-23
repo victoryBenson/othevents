@@ -3,6 +3,7 @@ import Image from 'next/image'
 import React from 'react'
 import { CiCalendar } from "react-icons/ci";
 import { LuPoundSterling } from "react-icons/lu";
+import  calendarIcon from '../../public/assets/img/calendar-icon.png'
 
 const data = [
     {
@@ -31,12 +32,15 @@ const Bookticket = () => {
                         </div>
                         <div className='w-full md:w-1/2 bg-[#F5E6CA] p-5 md:p-10 lg:p-20 flex flex-col justify-center space-y-5'>
                             <div className='flex text-darkgray/70 text-sm gap-2'>
-                                <span className='flex items-center '><CiCalendar className='text-primary '/>{item.startDate}</span>-
-                                <span>{item.endDate}</span>
+                                <span className='flex items-center gap-1 text-lg'>
+                                    {/* <CiCalendar className='text-primary '/> */}
+                                    <Image src={calendarIcon} alt="ticket" width={500} height={500} className="rounded w-6 h-6 ml-2"/>
+                                    March 19, 2025 9:00am - March 20 2025 9:00pm
+                                </span>
                             </div>
-                            <p className='text-xl md:text-2xl lg:text-4xl font-semibold tracking-widest leading-snug'>{item.description}</p>
+                            <p className='text-xl md:text-2xl lg:text-4xl font-semibold tracking-widest leading-snug text-neutral'>{item.description}</p>
                             <div className='flex items-center gap-4 justify-between py-5'>
-                                <p className="flex items-center text-base font-bold "><LuPoundSterling />{item.amount}</p>
+                                <p className="flex items-center text-base font-bold text-neutral"><LuPoundSterling />{item.amount}</p>
                                 <ButtonLinkOrange href={`${item.link}`} name={'Book a ticket'}/>
                             </div>
                         </div>

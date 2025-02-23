@@ -290,7 +290,7 @@ const page = () => {
                                 <p className='text-2xl md:text-[3rem] font-bold text-white py-10'>The Wedding Fair ‘25</p>
                             </div>
                             <div className='w-full md:w-1/2 bg-[#F5E6CA] p-5 md:p-10 lg:p-20 flex flex-col justify-center space-y-5'>
-                                <p className='text-4xl font-semibold tracking-widest leading-snug'>{item.title}</p>
+                                <p className='text-4xl font-semibold tracking-widest leading-snug text-neutral'>{item.title}</p>
                                 <p className="text-neutral text-lg">{item.description}</p>
                                 <div className='flex text-darkgray/70 text-base gap-2'>
                                     <span className='flex items-center gap-1'>
@@ -312,7 +312,7 @@ const page = () => {
                                 </span>
             
                                 <div className='flex items-center gap-4 justify-between py-5'>
-                                    <p className='flex items-center'><FaPoundSign />{item.amount}</p>
+                                    <p className='flex items-center text-neutral'><FaPoundSign />{item.amount}</p>
                                     <ButtonLinkOrange href={`${item.link}`} name={'Get a ticket'}/>
                                 </div>
                             </div>
@@ -331,10 +331,10 @@ const page = () => {
         // variants={fadeInVariants}
         {...{ ...fadeIn, transition: { delay: 0.5 } }}   
          className='px-5 md:px-10 lg:px-20 py-10 md:py-30 bg-lightgray' id=''>
-            <div className='flex flex-col lg:flex-row justify-center items-center mx-auto gap-10'>
+            <div className='flex flex-col md:flex-row justify-center items-center mx-auto gap-10'>
                 <div className='space-y-4 md:w-1/2'>
-                <h1 className="text-2xl lg:text-4xl  font-bold mb-4 py-5">The Wedding Fair '24 Highlights </h1>
-                    <div className='flex gap-4'>
+                    <h1 className="text-2xl lg:text-4xl text-[#2C2C2C] font-bold mb-4 py-5">The Wedding Fair '24 Highlights </h1>
+                    {/* <div className='flex gap-4'>
                         <div className='flex flex-col gap-4'>
                             <Image src={frame1} alt='frame' className='h-full w-full'/>
                             <Image src={frame2} alt='frame' className='h-full w-full'/>
@@ -342,16 +342,33 @@ const page = () => {
                         <div className='h-full w-auto'>
                             <Image src={frame3} alt='frame' className='h-full w-full'/>
                         </div>
+                    </div> */}
+                    <div className='flex gap-4'>
+                        <div className='flex flex-col gap-4 w-1/2 h-[60vh] sm:h-[90vh]'>
+                            <span className='h-1/2 rounded-lg overflow-hidden'>
+                                <Image src={frame1} alt='frame' className='h-full w-full object-cover rounded-lg'/>
+                            </span>
+                            <span className='h-2/3 rounded-lg overflow-hidden'>
+                                <Image src={frame2} alt='frame' className='h-full w-full object-cover rounded-lg'/>
+                            </span>
+                        </div>
+                        <div className='w-1/2 h-[60vh] sm:h-[85vh] rounded-lg overflow-hidden'>
+                            <Image src={frame3} alt='frame' className='h-full w-full object-cover rounded-lg'/>
+                        </div>
                     </div>
                 </div>
                 <div className='md:w-1/2'>
                     <div className='flex gap-4'>
-                        <div className='flex flex-col gap-4'>
-                            <Image src={frame4} alt='frame' className='h-full w-full'/>
-                            <Image src={frame5} alt='frame' className='h-full w-full'/>
+                        <div className='flex flex-col gap-4 w-1/2 h-[60vh] sm:h-[90vh]'>
+                            <span className='h-1/2 rounded-lg overflow-hidden'>
+                                <Image src={frame4} alt='frame' className='h-full w-full object-cover rounded-lg'/>
+                            </span>
+                            <span className='h-2/3 rounded-lg overflow-hidden'>
+                                <Image src={frame5} alt='frame' className='h-full w-full object-cover rounded-lg'/>
+                            </span>
                         </div>
-                        <div className='h-full w-auto'>
-                            <Image src={frame6} alt='frame' className='h-full w-full'/>
+                        <div className='w-1/2 h-[60vh] sm:h-[85vh] rounded-lg overflow-hidden'>
+                            <Image src={frame6} alt='frame' className='h-full w-full object-cover rounded-lg'/>
                         </div>
                     </div>
                 </div>
