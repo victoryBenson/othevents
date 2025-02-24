@@ -25,7 +25,7 @@ const ScrollToTop = () => {
   return (
     <motion.button
       onClick={scrollToTop}
-      className={`fixed bottom-6 right-6 p-3 bg-primary text-white rounded-full shadow-lg transition-opacity ${
+      className={`fixed z-[99] bottom-6 right-6 p-3 bg-primary text-white rounded-full shadow-lg transition-opacity ${
         isVisible ? "opacity-100" : "opacity-0"
       }`}
       whileHover={{ scale: 1.1 }}

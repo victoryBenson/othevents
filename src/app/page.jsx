@@ -254,8 +254,8 @@ const HeroHome = () => {
             <p className=' text-lg sm:text-2xl pb-6 lg:pb-16 text-white md:text-4xl font-bold '>Will You love to reach out to us?</p>
             <div className=' h-full flex flex-col lg:flex-row justify-center items-center mx-auto gap-20 '>
                 <div className='md:w-1/2 '>
-                    <div className='min:h-[50vh] w-full overflow-hidden'>
-                        <Image src={contactImg} alt='contact' className='w-full h-full object-cover'/>
+                    <div className='min:h-[50vh] w-full overflow-hidden rounded-lg'>
+                        <Image src={contactImg} alt='contact' className='w-full h-full object-cover  rounded-lg'/>
                     </div>
                 </div>
 
