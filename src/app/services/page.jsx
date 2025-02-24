@@ -173,7 +173,7 @@ const Service = () => {
             <div className='flex flex-col md:flex-row justify-center items-center mx-auto gap-10'>
                 <div className='space-y-4 md:w-1/2'>
                     <p className=' sm:text-lg lg:text-2xl text-justify md:text-start leading-8 py-5 ld:text-start text-neutral'>
-                        At PartyWithOTH, we specialize in crafting unforgettable events, handling every detail so you can enjoy the moment. From weddings to corporate functions, our expert team ensures seamless planning and execution.
+                        At EventByOTH, we specialize in crafting unforgettable events, handling every detail so you can enjoy the moment. From weddings to corporate functions, our expert team ensures seamless planning and execution.
                     </p>
                 </div>
                 <div className='md:w-1/2'>

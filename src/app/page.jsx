@@ -85,7 +85,7 @@ const HeroHome = () => {
                 className='text-white flex justify-center  h-full flex-col space-y-10 pl-3 md:pl-5 lg:pl-20'
                 >
                 <p className='text-2xl sm:text-4xl md:text-5xl font-bold font-serif'>
-                Make Every Event Unforgettable, <br className="hidden md:flex"/> with PartyWithOTH!
+                Make Every Event Unforgettable, <br className="hidden md:flex"/> with EventByOTH!
                 </p>
                 <p className='sm:text-2xl'>From elegant weddings to corporate galas, <br/> we bring your vision to life.</p>
                 <div className='flex items-center gap-4'>
@@ -179,7 +179,7 @@ const HeroHome = () => {
                 <m.div 
                     
                     className='space-y-4 md:w-1/2'>
-                    <p className='text-2xl md:text-4xl font-bold'>At PartyWithOTH</p>
+                    <p className='text-2xl md:text-4xl font-bold'>At EventByOTH</p>
                     <Image src={icon} alt='serviceicon'/>
                     <p className='text-lg py-5 text-justify ld:text-start'>we specialize in curating exceptional events and offering premium rentals. Whether you're planning a wedding, birthday, or corporate event, we handle the details so you can enjoy the moment.</p>
                     {/* <ButtonLinkOrange href='about-us' name={'Learn more'}/> */}

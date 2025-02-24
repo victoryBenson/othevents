@@ -114,7 +114,7 @@ const page = () => {
                 <div className='space-y-4 md:w-1/2'>
                     <h1 className="text-2xl lg:text-4xl  font-bold md:mb-4 md:y-5">Who We Are </h1>
                     <p className=' sm:text-lg lg:text-2xl leading-8 py-5 text-justify lg:text-start text-neutral'>
-                        At PartyWithOTH, we specialize in crafting unforgettable events, handling every detail so you can enjoy the moment. From weddings to corporate functions, our expert team ensures seamless planning and execution.
+                        At EventByOTH, we specialize in crafting unforgettable events, handling every detail so you can enjoy the moment. From weddings to corporate functions, our expert team ensures seamless planning and execution.
                     </p>
                 </div>
                 <div className='md:w-1/2'>

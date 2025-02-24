@@ -94,7 +94,7 @@ const page = () => {
             className=' px-5 md:px-10 lg:px-20 py-10 md:py-40 h-full md:min-h-[90vh] overflow-hidden'>
             <div className=' h-full flex flex-col md:flex-row justify-center  mx-auto gap-20 '>
                 <div className='md:w-1/2 '>
-                    <p className='text-2xl lg:pb-16 md:text-4xl font-bold py-3 md:font-bold '>Get in Touch with PartyWithOTH</p>
+                    <p className='text-2xl lg:pb-16 md:text-4xl font-bold py-3 md:font-bold '>Get in Touch with EventByOTH</p>
                     <p className='text-neutral text-lg'>We’d love to hear from you. Whether you have questions, need event planning assistance, or want to book rentals, we’re here to help</p>
                 </div>
 

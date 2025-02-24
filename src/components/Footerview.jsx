@@ -1,14 +1,12 @@
 'use client'
-import { ButtonLinkOrange } from '@/shared/ButtonLink'
+
 import Logo from '@/shared/logo'
 import Link from 'next/link'
 import React from 'react'
 import CalendlyPopup from './CalendlyEmbed'
-import { IoMdArrowUp } from "react-icons/io";
-import { BsFillSendFill } from "react-icons/bs";
-import { BsInstagram } from "react-icons/bs";
-import { FaFacebookF } from 'react-icons/fa6'
+import { BsInstagram, BsTwitterX, BsWhatsapp } from "react-icons/bs";
 import ScrollToTop from './ScrollToTop'
+import { AiFillTikTok } from 'react-icons/ai'
 const Footerview = () => {
   return (
     <div className='bg-darkgray lg:h-[40v border-t border-grey p-5'>
@@ -44,8 +42,16 @@ const Footerview = () => {
                 <a href="https://www.instagram.com/partywith_oth/" target="_blank" rel="noopener noreferrer">
                     <BsInstagram className='bg-white text-darkgray rounded-full p-2' size={40}/>
                 </a>
-                <BsFillSendFill className='bg-white text-darkgray rounded-full p-2' size={40}/>
-                <FaFacebookF className='bg-white text-darkgray rounded-full p-2' size={40}/>
+                <a href="https://x.com/partywith_oth?s=21&t=SFiM9uXJaONxTCKXlT7eXw" target="_blank" rel="noopener noreferrer">
+                    <BsTwitterX className='bg-white text-darkgray rounded-full p-2' size={40}/>
+                </a>
+                <a href="https://www.tiktok.com/@partywithoth?_t=ZN-8uBBn57lh5S&_r=1" target="_blank" rel="noopener noreferrer">
+                    <AiFillTikTok className='bg-white text-darkgray rounded-full p-2' size={40}/>
+                </a>
+                
+                <a href="https://wa.me/447884603969" target="_blank" rel="noopener noreferrer">
+                    <BsWhatsapp className='bg-white text-darkgray rounded-full p-2' size={40}/>
+                </a>
             </div>
         </div>
 
