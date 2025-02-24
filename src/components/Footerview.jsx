@@ -1,3 +1,4 @@
+'use client'
 import { ButtonLinkOrange } from '@/shared/ButtonLink'
 import Logo from '@/shared/logo'
 import Link from 'next/link'
@@ -40,8 +41,10 @@ const Footerview = () => {
                 <ScrollToTop/>
             </div>
             <div className='flex gap-8'>
+                <a href="https://www.instagram.com/partywith_oth/" target="_blank" rel="noopener noreferrer">
+                    <BsInstagram className='bg-white text-darkgray rounded-full p-2' size={40}/>
+                </a>
                 <BsFillSendFill className='bg-white text-darkgray rounded-full p-2' size={40}/>
-                <BsInstagram className='bg-white text-darkgray rounded-full p-2' size={40}/>
                 <FaFacebookF className='bg-white text-darkgray rounded-full p-2' size={40}/>
             </div>
         </div>

@@ -1,3 +1,5 @@
+'use client'
+
 import { ButtonLinkOrange } from '@/shared/ButtonLink'
 import Image from 'next/image'
 import React from 'react'

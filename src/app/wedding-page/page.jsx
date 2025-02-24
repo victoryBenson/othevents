@@ -4,15 +4,13 @@ import { motion } from 'framer';
 import  aboutImg from '../../../public/assets/img/wedpage.png'
 import  thumbnail from '../../../public/assets/img/thumbnail.png'
 import { ButtonLinkOrange } from '@/shared/ButtonLink';
-import { Link as ScrollTo } from "react-scroll";
+
 import Image from 'next/image';
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 import "swiper/css/autoplay";
 import "swiper/css/pagination";
 import { Autoplay, Pagination, Navigation } from "swiper/modules";
-import { FaMapLocationDot } from "react-icons/fa6";
-import { TfiQuoteRight, TfiQuoteLeft } from "react-icons/tfi";
 import  display1 from '../../../public/assets/img/local-cuisiness.png'
 import  display2 from '../../../public/assets/img/after-party-banger.png'
 import  display3 from '../../../public/assets/img/red-carpet.png'
@@ -29,12 +27,12 @@ import  frame6 from '../../../public/assets/img/h6.png'
 import  hero1 from '../../../public/assets/img/webp1.png'
 import  hero2 from '../../../public/assets/img/webp2.png'
 import  hero3 from '../../../public/assets/img/webp3.png'
-import { fadeInVariants } from '../page';
 import { fadeIn } from '@/shared/GlobalAnimation';
 import { FaPoundSign } from "react-icons/fa";
 import  timeIcon from '../../../public/assets/img/time-icon.png'
 import  mapIcon from '../../../public/assets/img/map-icon.png'
 import  calendarIcon from '../../../public/assets/img/calendar-icon.png'
+import VideoPage from '@/components/Video';
 
 const slides = [
     {
@@ -221,7 +219,8 @@ const page = () => {
             // variants={fadeInVariants}  
             {...{ ...fadeIn, transition: { delay: 0.5 } }} 
             id='video' className='px-5 md:px-10 lg:px-20 py-10 md:py-30'>
-            <Image src={thumbnail} alt={'video-image'} className='h-full w-full object-cover'/>
+            {/* <Image src={thumbnail} alt={'video-image'} className='h-full w-full object-cover'/> */}
+            <VideoPage/>
         </motion.section>
 
         <motion.section 

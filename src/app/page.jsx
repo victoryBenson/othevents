@@ -1,6 +1,6 @@
 'use client'
 
-import HeroHomeCarousel from '@/shared/heroHomeCarousel';
+
 import React, {Fragment, useEffect, useState} from 'react'
 import { motion, m } from 'framer';
 import { Link as ScrollTo } from "react-scroll";
@@ -10,21 +10,20 @@ import icon from '../../public/assets/img/services_icon.png'
 import frame1 from '../../public/assets/img/frame1.png'
 import frame2 from '../../public/assets/img/frame2.png'
 import frame3 from '../../public/assets/img/frame3.png'
-import { ButtonLinkOrange, ButtonLinkWhite } from '@/shared/ButtonLink';
+import { ButtonLinkWhite } from '@/shared/ButtonLink';
 import SplitScreenCarousel from '@/components/OurExpertiseCarousel';
 import contactImg from '../../public/assets/img/contact.png'
 import Bookticket from '@/components/Bookticket';
 import Link from 'next/link';
-import { fadeIn } from '@/shared/GlobalAnimation';
+import useFadeIn, { fadeIn } from '@/shared/GlobalAnimation';
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 import "swiper/css/autoplay";
 import "swiper/css/pagination";
 import { Autoplay, Pagination, Navigation } from "swiper/modules";
 import  hero1 from '../../public/assets/img/webp1.png'
-import  hero2 from '../../public/assets/img/webp2.png'
 import  hero3 from '../../public/assets/img/webp3.png'
-import CalendlyEmbed from '@/components/CalendlyEmbed';
+
 import CalendlyPopup from '@/components/CalendlyEmbed';
 
 import  c1 from '../../public/assets/img/coporate-event1.webp'
@@ -32,6 +31,7 @@ import  c2 from '../../public/assets/img/coporate-event2.webp'
 
 import  b1 from '../../public/assets/img/birthday-01.webp'
 import  b2 from '../../public/assets/img/birthday-02.webp'
+
 
 export const fadeInVariants = {
   hidden: { opacity: 0, y: 50 },
@@ -63,11 +63,12 @@ const heroDisplay = [
 ]
 
 const HeroHome = () => {
-  const [isVisible, setIsVisible] = useState(false);
-
-  useEffect(() => {
-    setTimeout(() => setIsVisible(true), 300);
-  }, []);
+    const [isVisible, setIsVisible] = useState(false);
+    const fadeIn = useFadeIn(0.5);
+        
+    useEffect(() => {
+        setTimeout(() => setIsVisible(true), 300);
+    }, []);
 
 
 
@@ -80,7 +81,7 @@ const HeroHome = () => {
             <span className='bg-linear-to-r bg-darkgray/20 absolute inset-0 -z-10'></span>
 
             <motion.div
-                {...{ ...fadeIn, transition: { delay: 0.5 } }}
+                {...fadeIn}
                 className='text-white flex justify-center  h-full flex-col space-y-10 pl-3 md:pl-5 lg:pl-20'
                 >
                 <p className='text-2xl sm:text-4xl md:text-5xl font-bold font-serif'>
@@ -138,9 +139,6 @@ const HeroHome = () => {
                         heroDisplay.map((slide, index) => (
                             <SwiperSlide key={index}>
                                 < div className=" h-full  relative overflow-hidden text-center justify-center items-center flex flex-col">
-                                
-                                    
-                                    {/* <Image src={slide.image} alt={'image'} className='h-full w-full object-cover'/> */}
 
                                     <div className="h-[40vh] text-lightgray bg-darkgray/40 w-full flex justify-center items-center gap-4 px-4 ">
                                         <div className=' w-1/2'>
@@ -175,7 +173,8 @@ const HeroHome = () => {
                 // viewport={{ amount: 0.3 }} 
                 // variants={fadeInVariants} 
 
-                {...{ ...fadeIn, transition: { delay: 0.5 } }}
+                // {...{ ...fadeIn, transition: { delay: 0.5 } }}
+                {...fadeIn}
                 className='flex flex-col md:flex-row justify-center items-center mx-auto gap-7 lg:gap-10'>
                 <m.div 
                     
@@ -219,7 +218,8 @@ const HeroHome = () => {
             // viewport={{ amount: 0.3 }} 
             // variants={fadeInVariants} 
 
-            {...{ ...fadeIn, transition: { delay: 0.5 } }}
+            // {...{ ...fadeIn, transition: { delay: 0.5 } }}
+            {...fadeIn}
             className='px-5 md:px-10 lg:px-20 py-10 md:py-30'
             >
             <h1 className="text-2xl lg:text-4xl  font-bold mb-4 py-5">
@@ -248,7 +248,8 @@ const HeroHome = () => {
             // whileInView="visible"
             // viewport={{ amount: 0.3 }} 
             // variants={fadeInVariants} 
-            {...{ ...fadeIn, transition: { delay: 0.5 } }}
+            // {...{ ...fadeIn, transition: { delay: 0.5 } }}
+            {...fadeIn}
             className='h-full md:min-h-[90vh] bg-darkgray overflow-hidden p-5 md:p-10 lg:p-20'>
             <p className=' text-lg sm:text-2xl pb-6 lg:pb-16 text-white md:text-4xl font-bold '>Will You love to reach out to us?</p>
             <div className=' h-full flex flex-col lg:flex-row justify-center items-center mx-auto gap-20 '>
