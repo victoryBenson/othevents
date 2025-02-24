@@ -23,7 +23,7 @@ const Footerview = () => {
             <div className='flex flex-col gap-4'>
                 <span className>Contact us</span>
                 <span className='text-grey text-sm '>Email</span>
-                <span>Info@eventbbyoth.com</span>
+                <span>info@eventsbyoth.com</span>
                 <span className='text-grey text-sm'>Phone</span>
                 <span>+447884603969</span>
             </div>
