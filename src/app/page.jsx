@@ -27,6 +27,12 @@ import  hero3 from '../../public/assets/img/webp3.png'
 import CalendlyEmbed from '@/components/CalendlyEmbed';
 import CalendlyPopup from '@/components/CalendlyEmbed';
 
+import  c1 from '../../public/assets/img/coporate-event1.webp'
+import  c2 from '../../public/assets/img/coporate-event2.webp'
+
+import  b1 from '../../public/assets/img/birthday-01.webp'
+import  b2 from '../../public/assets/img/birthday-02.webp'
+
 export const fadeInVariants = {
   hidden: { opacity: 0, y: 50 },
   visible: { opacity: 1, y: 0, transition: { duration: 0.8 } },
@@ -44,15 +50,15 @@ const heroDisplay = [
         id: 2,
         title: "Corporate Events",
         desc: "From elegant weddings to corporate galas, we bring your vision to life.",
-        image: hero2,
-        image2: hero1
+        image: c1,
+        image2: c2
     },
     {
         id: 3,
         title: "Birthday Parties",
         desc: "From elegant weddings to corporate galas, we bring your vision to life.",
-        image: hero3,
-        image2: hero2
+        image: b1,
+        image2: b2
     },
 ]
 

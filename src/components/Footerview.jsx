@@ -7,6 +7,7 @@ import { IoMdArrowUp } from "react-icons/io";
 import { BsFillSendFill } from "react-icons/bs";
 import { BsInstagram } from "react-icons/bs";
 import { FaFacebookF } from 'react-icons/fa6'
+import ScrollToTop from './ScrollToTop'
 const Footerview = () => {
   return (
     <div className='bg-darkgray lg:h-[40v border-t border-grey p-5'>
@@ -35,7 +36,8 @@ const Footerview = () => {
 
         <div className='flex text-white justify-between py-5'>
             <div>
-                <IoMdArrowUp className="bg-primary rounded-full p-2" size={40} />
+                {/* <IoMdArrowUp className="bg-primary rounded-full p-2" size={40} /> */}
+                <ScrollToTop/>
             </div>
             <div className='flex gap-8'>
                 <BsFillSendFill className='bg-white text-darkgray rounded-full p-2' size={40}/>
